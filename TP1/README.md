@@ -31,9 +31,6 @@ En este repositorio se desarrollará el trabajo práctico numero 1 de la materia
 > 1. Editar y simular
 > 2. Generación de código
 
-## subitem
-
-### subsubitem
 
 # Ejercicio 4
 
