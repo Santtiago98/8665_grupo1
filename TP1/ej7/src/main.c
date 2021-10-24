@@ -99,7 +99,6 @@ void ej7_opStartCooking( Ej7* handle){
 }
 void ej7_opStopCooking( Ej7* handle){
 	gpioWrite(LEDG, false);
-	//gpioWrite(LEDR,  true);
 }
 
 

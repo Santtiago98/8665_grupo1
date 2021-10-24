@@ -102,7 +102,7 @@ Luego, se definen 5 estados, los nombres de los mismos son autoexplicativos:
 4. **Cerrando**
 5. **Parado**, en este caso vale la pena decir que se trata de un punto medio entre abierto y cerrado (en caso de obstaculo).
 
-La **maquina de estados** puede observarse en la siguiente figura:
+La **máquina de estados** puede observarse en la siguiente figura:
 ![docs/images/ej5_program.png](docs/images/ej5_program.png)
 
 Por simplicidad se elije que un mismo evento abre o cierre el porton (un solo boton del control remoto), dependiendo del estado en el que este justo antes de presionarlo.
@@ -128,6 +128,8 @@ void ej5_opPararPorton(Ej5* handle, const sc_integer PortNumber){
 
 En este caso solo se estan llevando a cabo la senalizacion de los LEDS. Pero, en caso de tener realmente el motor, se accionaria el mismo correspondientemente (a esto refiere `accionarMotor()`).
 
+Se verificó el funcionamiento del mismo tanto en el simulador de `Yakindu` como en la placa `EDU-CIAA-NXP` al iniciar en estado cerrado con `TEC 1` efectuamos el evento de abrir el portón, se encenderá el `LED 1`, luego con `TEC 3` podemos indicar que el sensor detecto un obstáculo, encendiendo el `LED 3` por 1 segundo y luego retornando a la apertura. Por otro lado, con `TEC 4` indicamos el final de carrera, luego con `TEC 2` accionamos el evento de cerrar el portón, también pudiendo interrumpirlo con `TEC 3` como obstáculo.
+
 # Ejercicio 6
 
 > Implementar (editar, simular y generar el código) el modelo de control de Escalera Mecánica unidireccional automatizada (motor
@@ -143,6 +145,61 @@ botón de modo, botón de comenzar/terminar y sensor de apertura de puerta)
 >
 > 1. Editar y simular
 > 2. Generación de código
+
+Autor: Francisco Rossi
+
+***
+Codigo fuente: [ej7](ej7)
+
+Teniendo en cuenta el enunciado se definen los siguientes eventos:
+
+1. `evStartCooking`:
+    El evento corresponde a presionar el botón de start.
+2. `evStopCooking`
+    El evento corresponde a presionar el botón de stop o puede también ser disparado por el sensor de puerta abierta. Lo importante es que al generarse va primero a el estado *Pause* y luego puede retomarse.
+3. `evSelectCookType`
+    Este evento corresponde a presionar el botón de selección de modo.
+
+Luego, se definen 5 estados:
+
+1. **Idle** Corresponde al estado de *stand-by*. Queda a la espera de la seleccion de un modo de cocción..
+2. **Cooking** Corresponde al estado del microndas funcionando.
+3. **Pause** Corresponde al estado de **Pause**, dado por presionar el boton de stop una vez o de puerta abierta.
+4. **cookType_1** Corresponde al estado de tener seleccionado el modo 1.
+5. **cookType_2** Corresponde al estado de tener seleccionado el modo 2.
+5. **cookType_3** Corresponde al estado de tener seleccionado el modo 3.
+
+La **máquina de estados** puede observarse en las siguientes figuras:
+
+![docs/images/ej7_program_1.png](docs/images/ej7_program_1.png)
+![docs/images/ej7_program_2.png](docs/images/ej7_program_2.png)
+
+El flujo del programa se basa en los estados, empieza en estado **Idle**, al seleccionar el modo de cocción mediante el botón de modo, se puede arrancar a cocinarlo, mediante el botón de start. Luego, si durante la cocción se abre la puerta, ya estaba abierta al empezar o se selecciona el botón de parar una vez, se pasa al estado **Pause** donde si se vuelve a presionar el botón de start continua la cocción si la puerta está cerrada, si se presiona el botón de stop entonces vuelve al modo **Idle**.
+
+La selección de los tipos es cíclico, es decir si seguimos presionando el botón de modo luego de estar en el modo 3, volverá al primero.
+
+Las siguientes funciones son las ejecutadas al ingresar en cada uno de los estados. De esta manera se inician las acciones de apagar y prender LEDS, simplemente para tener una forma de visualizar lo realizado en la placa, el programa del microndas deberia resolver cada una de las acciones.
+
+```c
+void ej7_opSelectCookType( Ej7* handle, const sc_integer type){
+	gpioWrite(LED1, false);
+	gpioWrite(LED2, false);
+	gpioWrite(LED3, false);
+	gpioWrite(LED1 + (type -1),  true);
+}
+void ej7_opStartCooking( Ej7* handle){
+	gpioWrite(LEDR,  false);
+	gpioWrite(LEDG,  true);
+}
+void ej7_opStopCooking( Ej7* handle){
+	gpioWrite(LEDG, false);
+}
+}
+```
+
+En este caso solo se estan llevando a cabo la senalizacion de los LEDS. Pero, en caso de tener realmente el microndas, se accionaria el mismo correspondientemente.
+
+Se verificó el funcionamiento del mismo tanto en el simulador de `Yakindu` como en la placa `EDU-CIAA-NXP` al cargarlo el `LEDR` indica el estado **Idle**, luego al presionar `TEC 3` se elije un modo (indicados por `LED1`, `LED2`, `LED3` correspondientemente). Luego con `TEC 1` se incia y `TEC 2` actua como botón de stop.
 
 # Ejercicio 8
 
