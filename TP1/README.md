@@ -154,11 +154,60 @@ Teniendo en cuenta el enunciado se definen los siguientes eventos:
     
 Luego, se definen 3 estados:
 
-1. **Apagado** Corresponde a si la escalera se encuentra totalmente frenada. Es un estado inicial en el que la escalera se encuentra conectada, pero no en movimiento. Se señaliza que está frenada mediante el LEDR encendido.
-2. **Velocidad 1** Corresponde a si la escalera se encuentra en movimiento pero sin personas en ella, en la velocidad lenta. Se señaliza que está en movimiento LEDG encendido, y que está en velocidad 1 con el LED1.
-3. **Velocidad 2** Corresponde a si la escalera se encuentra en movimiento con personas arriba, en la velocidad rápida. Se señaliza que está en movimiento con LEDG encendido, y que está en velocidad 2 con el LED2.
+1. **Apagado** Corresponde a si la escalera se encuentra totalmente frenada. Es un estado inicial en el que la escalera se encuentra conectada, pero no en movimiento. Se señaliza que está frenada mediante el `LEDR` encendido.
+2. **Velocidad 1** Corresponde a si la escalera se encuentra en movimiento pero sin personas en ella, en la velocidad lenta. Se señaliza que está en movimiento `LEDG` encendido, y que está en velocidad 1 con el `LED1`.
+3. **Velocidad 2** Corresponde a si la escalera se encuentra en movimiento con personas arriba, en la velocidad rápida. Se señaliza que está en movimiento con `LEDG` encendido, y que está en velocidad 2 con el `LED2`.
 
-La **máquina de estados** puede observarse en las siguientes figuras
+La **máquina de estados** puede observarse en la siguientes figura:
+
+![docs/images/ej7_program_1.png](docs/images/ej6_program.png)
+
+La escalera comienza en modo apagado, es decir, se encuentra frenada hasta que se la active. Estando frenada, cuenta si suben o bajan personas, para que al momento de prenderse arranque en la velocidad indicada. Al prenderse, si no hay personas arriba, arranca en la velocidad lenta. Cuando se sube una persona, la escalera cambia a velocidad rápida, y se cuentan las personas que suben y bajan para que cuando el contador llegue a 0, se vuelva a la velocidad lenta ya que no se encuentra nadie en la escalera.
+
+Se agregó una condición de tiempo, para que en caso de que se haya sensado accidentalmente que alguien subió, o no se haya sensado que alguien bajó, la escalera no se quede indefinidamente en la velocidad 2. Funciona de la siguiente manera: Si la escalera hace un ciclo (es decir, el primer escalón llega al final) y no se sensó que nadie subió ni bajó, se espera un ciclo más, y si se sigue sin haber sensado a ninguna persona, se reinicia el contador de personas y se vuelve a la velocidad lenta.
+
+La escalera puede ser frenada en cualquiera de las 2 velocidades. El contador va a mantenerse si la escalera se frena, y se van a seguir sensando las personas que suben y bajan, de manera tal de que al volver a prenderse, se inicie en la velocidad correcta.
+
+Las siguientes funciones son ejecutadas al momento de ingresar en cada estado correspondiente (se pueden ver en el diagrama de estados anterior).
+
+```c
+/*! Esta funcion para o prende la escalera (en este caso apaga y prende el LEDR y el LEDG).
+ *  @param handle instancia de máquina de estados
+ *  @param state estado anterior de la escalera
+ */
+void escaleraMecanicaIface_opSetLight(const EscaleraMecanica* handle, const sc_boolean state)
+{
+	if(state == false){
+		gpioWrite( (LEDG), false);
+		gpioWrite( (LEDR), true );
+		// apaga el motor
+	}
+	else{
+		gpioWrite( (LEDR), false);
+		gpioWrite( (LEDG), true);
+		// enciende el motor
+	}
+}
+
+/*! Esta funcion cambia la velocidad del motor.
+ *  @param handle instancia de máquina de estados
+ *  @param speed  opción de velocidad
+ */
+void escaleraMecanicaIface_opSetSpeed(const EscaleraMecanica* handle, const sc_integer speed)
+{
+	if(speed == SPEED_1){
+		gpioWrite( (LEDR+3), true);
+		gpioWrite( (LEDR+4), false);
+		// motor a velocidad 1
+	}
+	if(speed == SPEED_2){
+		gpioWrite( (LEDR+3), false);
+		gpioWrite( (LEDR+4), true);
+		// motor a velocidad 2
+	}
+}
+```
+Se verificó el funcionamiento del mismo tanto en el simulador de `Yakindu` como en la placa `EDU-CIAA-NXP`. Al iniciar, se prende el `LEDR` indicando que la escalera está frenada. Se puede iniciar/frenar la escalera mediante el botón `TEC1`, y al iniciar se apagará el `LEDR` y se encenderá el `LEDG`. Se puede simular que suben personas mediante el botón `TEC2` y que bajan mediante el botón `TEC3`. El `LED1` señaliza que se encuentra en la velocidad lenta y el `LED2` indica que se encuentra en la velocidad rápida. Por último, si se espera varios segundos sin tocar ningún botón en la velocidad 2, la escalera volverá a la velocidad 1.
 
 
 # Ejercicio 7
