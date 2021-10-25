@@ -141,7 +141,7 @@ c/movimiento en un sentido y dos velocidades, sensores de ingreso, egreso y señ
 Autor: Ignacio Piperno
 
 ***
-Código fuente: [escalera](ej6)
+Código fuente: [ej6](escalera)
 
 
 # Ejercicio 7
