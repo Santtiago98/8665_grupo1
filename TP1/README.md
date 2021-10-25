@@ -145,11 +145,20 @@ Código fuente: [ej6](escalera)
 
 Teniendo en cuenta el enunciado se definen los siguientes eventos:
 
-1. `evEntry`:
+1. `siEntry`:
     El evento corresponde a que suba una persona a la escalera.
-2. `evLeave`:
+2. `siLeave`:
     El evento corresponde a que baje una persona de la escalera.
-3. `ev`
+3. `siPower`:
+    El evento corresponde a que presionen un boton de encendido/apagado. Este evento fué agregado a criterio propio.
+    
+Luego, se definen 3 estados:
+
+1. **Apagado** Corresponde a si la escalera se encuentra totalmente frenada. Es un estado inicial en el que la escalera se encuentra conectada, pero no en movimiento. Se señaliza que está frenada mediante el LEDR encendido.
+2. **Velocidad 1** Corresponde a si la escalera se encuentra en movimiento pero sin personas en ella, en la velocidad lenta. Se señaliza que está en movimiento LEDG encendido, y que está en velocidad 1 con el LED1.
+3. **Velocidad 2** Corresponde a si la escalera se encuentra en movimiento con personas arriba, en la velocidad rápida. Se señaliza que está en movimiento con LEDG encendido, y que está en velocidad 2 con el LED2.
+
+La **máquina de estados** puede observarse en las siguientes figuras
 
 
 # Ejercicio 7
