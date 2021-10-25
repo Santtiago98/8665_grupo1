@@ -138,6 +138,20 @@ c/movimiento en un sentido y dos velocidades, sensores de ingreso, egreso y señ
 > 1. Editar y simular
 > 2. Generación de código
 
+Autor: Ignacio Piperno
+
+***
+Código fuente: [ej6](escalera)
+
+Teniendo en cuenta el enunciado se definen los siguientes eventos:
+
+1. `evEntry`:
+    El evento corresponde a que suba una persona a la escalera.
+2. `evLeave`:
+    El evento corresponde a que baje una persona de la escalera.
+3. `ev`
+
+
 # Ejercicio 7
 
 > Implementar (editar, simular y generar el código) el modelo de control de Horno Microondas (3 modos de cocción seleccionable por
@@ -149,7 +163,7 @@ botón de modo, botón de comenzar/terminar y sensor de apertura de puerta)
 Autor: Francisco Rossi
 
 ***
-Codigo fuente: [ej7](ej7)
+Código fuente: [ej7](ej7)
 
 Teniendo en cuenta el enunciado se definen los siguientes eventos:
 
