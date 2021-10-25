@@ -138,6 +138,12 @@ c/movimiento en un sentido y dos velocidades, sensores de ingreso, egreso y señ
 > 1. Editar y simular
 > 2. Generación de código
 
+Autor: Ignacio Piperno
+
+***
+Código fuente: [escalera](ej6)
+
+
 # Ejercicio 7
 
 > Implementar (editar, simular y generar el código) el modelo de control de Horno Microondas (3 modos de cocción seleccionable por
