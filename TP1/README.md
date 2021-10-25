@@ -47,7 +47,7 @@ El diagrama de la maquina de estados es:
 
 ## main_region
 
-En la `main_region` tenemos el "handler" de los eventos dados por TECX, donde dependiendo del ejercicio que estemos resolviendo cambiara levemente, pero fundamentalmente se define que hacer para cada uno de los pulsadores, a continuacion, como ejemplo podemos ver `main_region` del [Ejercicio 5](#ejercicio-5)
+En la `main_region` tenemos el "handler" de los eventos dados por TECX, donde dependiendo del ejercicio que estemos resolviendo cambiara levemente, pero fundamentalmente se define qué hacer para cada uno de los pulsadores, a continuación, como ejemplo podemos ver `main_region` del [Ejercicio 5](#ejercicio-5)
 
 ![docs/images/main_region.png](docs/images/main_region.png)
 
