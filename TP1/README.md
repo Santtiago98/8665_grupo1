@@ -35,7 +35,7 @@ En los diferentes ejercicio desarrollados, utilizaremos dos bloques de maquina d
 
 ## TECX
 
-Este pedazo de codigo nos permite detectar si un pulsador es accionado, tiene un debouncer incorporado y nos devuelve un valor determinador dependiendo de qué pulsador es el que disparo el evento.
+Este pedazo de codigo nos permite detectar si un pulsador es accionado, tiene un debouncer incorporado y nos devuelve un valor determinado dependiendo de qué pulsador es el que disparó el evento.
 
 |    TEC4   |    TEC3   |    TEC2   |    TEC1   |
 |:---------:|:---------:|:---------:|:---------:|
