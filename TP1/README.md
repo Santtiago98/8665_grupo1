@@ -78,6 +78,17 @@ Para implementar el sistema que pide el enunciado se definen los siguientes even
 5. `siDown`:
  	Con este botón se seleccionan las opciones en cada uno de los menús previos.
 
+Se definen también 5 estados principales: 
+1. **TRIANGULAR**
+2. **SENOIDAL**
+3. **CUADRADA**
+4. **FRECUENCIA**
+5. **TENSIÓN**
+
+Cada uno de estos estados abre lugar a la configuración de determinado tipo de señal o magnitud.
+
+
+
 # Ejercicio 4
 
 > Implementar (editar, simular y generar el código) el modelo de control de Puerta Corrediza automatizada (motor con movimiento en dos
