@@ -82,22 +82,32 @@ TimerTicks ticks[NOF_TIMERS];
 //void ej7Iface_opLED( Ej7* handle, sc_integer LEDNumber, sc_boolean State )
 void ej7_opLED( Ej7* handle, const sc_integer LEDNumber, const sc_boolean State)
 {
-	gpioWrite( (LEDR + LEDNumber), State );
+	gpioWrite(LEDR + LEDNumber, State );
 }
 
 // funciones
 
 void ej7_opSelectCookType( Ej7* handle, const sc_integer type){
+
+	// Turn all LEDs off
 	gpioWrite(LED1, false);
 	gpioWrite(LED2, false);
 	gpioWrite(LED3, false);
-	gpioWrite(LED1 + (type -1),  true);
+
+	// Turn LEDx ON
+	gpioWrite(LED1 + (type - 1),  true);
 }
 void ej7_opStartCooking( Ej7* handle){
+
+	// stand-by indicator off
 	gpioWrite(LEDR,  false);
+
+	// LED indicator cooking on
 	gpioWrite(LEDG,  true);
 }
 void ej7_opStopCooking( Ej7* handle){
+	
+	// LED indicator cooking off
 	gpioWrite(LEDG, false);
 }
 
