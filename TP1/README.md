@@ -59,6 +59,25 @@ En la `main_region` tenemos el "handler" de los eventos dados por TECX, donde de
 > 1. Editar y simular
 > 2. Generación de código
 
+
+Autor: Santiago Aupi
+
+***
+Codigo fuente: [ej3](ej3)
+
+Para implementar el sistema que pide el enunciado se definen los siguientes eventos internos:
+
+1. `siTECXOK`: 
+	Este evento confirma que se oprimió un botón.
+2. `siForma`:
+	Este evento da lugar a la selección de la forma de onda: _triangular_, _senoidal_ o  _cuadrada_.
+3. `siMagnitud`:
+	Este evento da lugar a la configuración de la _frecuencia_ y la _tensión_.
+4. `siUp`:
+	Con este botón se seleccionan las opciones en cada uno de los menús previos.
+5. `siDown`:
+ 	Con este botón se seleccionan las opciones en cada uno de los menús previos.
+
 # Ejercicio 4
 
 > Implementar (editar, simular y generar el código) el modelo de control de Puerta Corrediza automatizada (motor con movimiento en dos
@@ -66,6 +85,12 @@ sentidos, sensor de presencia y fines de carrera)
 >
 > 1. Editar y simular
 > 2. Generación de código
+
+
+Autor: Santiago Aupi
+
+***
+Codigo fuente: [ej4](ej4)
 
 # Ejercicio 5
 
