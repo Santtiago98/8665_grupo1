@@ -85,8 +85,8 @@ Se definen también 5 estados principales:
 4. **FRECUENCIA**
 5. **TENSIÓN**
 
-Cada uno de estos estados abre lugar a la configuración de determinado tipo de señal o magnitud.
-
+Cada uno de estos estados abre lugar a la configuración de determinado tipo de señal o magnitud. En la siguientes figuras se observa la **máquina de estados** diseñada.
+![docs/images/ej3_program_forma.png](docs/images/ej3_program_forma.png)
 
 
 # Ejercicio 4
