@@ -85,7 +85,7 @@ void ej5_opLED( Ej5* handle, sc_integer LEDNumber, sc_boolean State )
 	gpioWrite( (LEDR + LEDNumber), State );
 }
 
-// funciones
+// program functions, for now, only LEDs.
 
 void ej5_opAbrirPorton( Ej5* handle, const sc_integer PortNumber){
 	gpioWrite(LED1, true);

@@ -1,10 +1,3 @@
-/** @brief This is a simple statechart example using Yakindu Statechart Tool
- * Plug-in (update site: http://updates.yakindu.org/sct/mars/releases/).
- */
-
-/** \addtogroup statechart Simple UML Statechart example.
- ** @{ */
-
 /*==================[inclusions]=============================================*/
 
 #include "main.h"
@@ -13,8 +6,7 @@
 /* Include statechart header file. Be sure you run the statechart C code
  * generation tool!
  */
-//#include "ej7.h"
-#include "ej7.h"
+#include "EscaleraMecanica.h"
 #include "TimerTicks.h"
 
 
@@ -29,39 +21,72 @@
 volatile bool SysTick_Time_Flag = false;
 
 /*! This is a state machine */
-static Ej7 statechart;
+static EscaleraMecanica statechart;
 
 /*! This is a timed state machine that requires timer services */
-#define NOF_TIMERS (sizeof(Ej7TimeEvents)/sizeof(sc_boolean))
+#define NOF_TIMERS (sizeof(EscaleraMecanicaTimeEvents)/sizeof(sc_boolean))
 
 TimerTicks ticks[NOF_TIMERS];
 
 
-/*==================[internal functions declaration]=========================*/
-
-/*==================[internal data definition]===============================*/
-
-/*==================[external data definition]===============================*/
-
-/*==================[internal functions definition]==========================*/
-
 /*==================[external functions definition]==========================*/
+
+/*! Esta funcion para o prende la escalera (en este caso apaga y prende el LEDR y el LEDG).
+ *  @param handle instancia de máquina de estados
+ *  @param state estado anterior de la escalera
+ */
+void escaleraMecanicaIface_opSetLight(const EscaleraMecanica* handle, const sc_boolean state)
+{
+
+	if(state == false){
+		gpioWrite( (LEDG), false);
+		gpioWrite( (LEDR), true );
+		// apaga el motor
+	}
+	else{
+		gpioWrite( (LEDR), false);
+		gpioWrite( (LEDG), true);
+		// enciende el motor
+
+	}
+
+}
+
+/*! Esta funcion cambia la velocidad del motor.
+ *  @param handle instancia de máquina de estados
+ *  @param speed  opción de velocidad
+ */
+void escaleraMecanicaIface_opSetSpeed(const EscaleraMecanica* handle, const sc_integer speed)
+{
+	if(speed == SPEED_1){
+		gpioWrite( (LEDR+3), true);
+		gpioWrite( (LEDR+4), false);
+		// motor a velocidad 1
+	}
+	if(speed == SPEED_2){
+		gpioWrite( (LEDR+3), false);
+		gpioWrite( (LEDR+4), true);
+		// motor a velocidad 2
+	}
+
+}
+
+void escaleraMecanicaIface_opCount(const EscaleraMecanica* handle, const sc_integer counter, const sc_boolean last)
+{
+}
 
 /*! \file This header defines prototypes for all functions that are required
  *  by the state machine implementation.
  *
  *  This is a state machine uses time events which require access to a timing
  *  service. Thus the function prototypes:
-// *  - ej7_setTimer and
- *  - ej7_set_timer and
-// *  - ej7_unsetTimer
- *  - ej7_unset_timer
+ *  - escaleraMecanica_setTimer and
+ *  - escaleraMecanica_unsetTimer
  *  are defined.
  *
  *  This state machine makes use of operations declared in the state machines
  *  interface or internal scopes. Thus the function prototypes:
-// *  - ej7Iface_opLED
- *  - ej7_opLED
+ *  - escaleraMecanicaIface_opLED
  *  are defined.
  *
  *  These functions will be called during a 'run to completion step' (runCycle)
@@ -79,36 +104,10 @@ TimerTicks ticks[NOF_TIMERS];
  * @param onoff state machine operation parameter
  */
 
-//void ej7Iface_opLED( Ej7* handle, sc_integer LEDNumber, sc_boolean State )
-void ej7_opLED( Ej7* handle, const sc_integer LEDNumber, const sc_boolean State)
+
+void escaleraMecanicaIface_opLED( EscaleraMecanica* handle, sc_integer LEDNumber, sc_boolean State )
 {
-	gpioWrite(LEDR + LEDNumber, State );
-}
-
-// funciones
-
-void ej7_opSelectCookType( Ej7* handle, const sc_integer type){
-
-	// Turn all LEDs off
-	gpioWrite(LED1, false);
-	gpioWrite(LED2, false);
-	gpioWrite(LED3, false);
-
-	// Turn LEDx ON
-	gpioWrite(LED1 + (type - 1),  true);
-}
-void ej7_opStartCooking( Ej7* handle){
-
-	// stand-by indicator off
-	gpioWrite(LEDR,  false);
-
-	// LED indicator cooking on
-	gpioWrite(LEDG,  true);
-}
-void ej7_opStopCooking( Ej7* handle){
-	
-	// LED indicator cooking off
-	gpioWrite(LEDG, false);
+	gpioWrite( (LEDR + LEDNumber), State );
 }
 
 
@@ -125,8 +124,7 @@ void ej7_opStopCooking( Ej7* handle){
  *  \periodic Indicates the the time event must be raised periodically until
  *   the timer is unset
  */
-//void ej7_setTimer( Ej7* handle, const sc_eventid evid, const sc_integer time_ms, const sc_boolean periodic )
-void ej7_set_timer( Ej7* handle, const sc_eventid evid, const sc_integer time_ms, const sc_boolean periodic )
+void escaleraMecanica_setTimer( EscaleraMecanica* handle, const sc_eventid evid, const sc_integer time_ms, const sc_boolean periodic )
 {
 	SetNewTimerTick(ticks, NOF_TIMERS, evid, time_ms, periodic);
 }
@@ -138,8 +136,7 @@ void ej7_set_timer( Ej7* handle, const sc_eventid evid, const sc_integer time_ms
  *  state when a state will be left.
  *  \param evid An unique identifier of the event.
  */
-//void ej7_unsetTimer( Ej7* handle, const sc_eventid evid )
-void ej7_unset_timer( Ej7* handle, const sc_eventid evid )
+void escaleraMecanica_unsetTimer( EscaleraMecanica* handle, const sc_eventid evid )
 {
 	UnsetTimerTick( ticks, NOF_TIMERS, evid );
 }
@@ -154,7 +151,6 @@ void myTickHook( void *ptr ){
 	/* The sysTick Interrupt Handler only set a Flag */
 	SysTick_Time_Flag = true;
 }
-
 
 /*! This function scan all EDU-CIAA-NXP buttons (TEC1, TEC2, TEC3 and TEC4),
  *  and return ID of pressed button (TEC1 or TEC2 or TEC3 or TEC4)
@@ -171,15 +167,13 @@ uint32_t Buttons_GetStatus_(void) {
 	return ret;
 }
 
-
 /**
- * @brief	main routine for statechart example: EDU-CIAA-NXP - ej7
+ * @brief	main routine for statechart example: EDU-CIAA-NXP - EscaleraMecanica LED3
  * @return	Function should not exit.
  */
 int main(void)
 {
 	uint32_t i;
-
 	uint32_t BUTTON_Status;
 
 	/* Generic Initialization */
@@ -195,8 +189,8 @@ int main(void)
 	InitTimerTicks( ticks, NOF_TIMERS );
 
 	/* Statechart Initialization */
-	ej7_init( &statechart );
-	ej7_enter( &statechart );
+	escaleraMecanica_init( &statechart );
+	escaleraMecanica_enter( &statechart );
 
 	/* LED state is toggled in the main program */
 	while (1) {
@@ -220,8 +214,7 @@ int main(void)
 				if (IsPendEvent( ticks, NOF_TIMERS, ticks[i].evid ) == true) {
 
 					/* Then Raise an Event -> Ticks.evid => OK */
-//					ej7_raiseTimeEvent( &statechart, ticks[i].evid );
-					ej7_raise_time_event( &statechart, ticks[i].evid );
+					escaleraMecanica_raiseTimeEvent( &statechart, ticks[i].evid );
 
 					/* Then Mark as Attached -> Ticks.evid => OK */
 					MarkAsAttEvent( ticks, NOF_TIMERS, ticks[i].evid );
@@ -232,22 +225,18 @@ int main(void)
 			BUTTON_Status = Buttons_GetStatus_();
 
 			/* Then if there are a pressed button */
-			if (BUTTON_Status != 0)
+			if (BUTTON_Status != 0){
 
 				/* Then Raise an Event -> evTECXOprimodo => OK,
 				 * and Value of pressed button -> viTecla */
-//				ej7Iface_raise_evTECXOprimido(&statechart, BUTTON_Status);
-				ej7_raise_evTECXOprimido(&statechart, BUTTON_Status);
-
-
-
-			else
+				escaleraMecanicaIface_raise_evTECXOprimido(&statechart, BUTTON_Status);
+			}
+			else{
 				/* Then else Raise an Event -> evTECXNoOprimido => OK */
-//				ej7Iface_raise_evTECXNoOprimido(&statechart);
-				ej7_raise_evTECXNoOprimido(&statechart);
-
+				escaleraMecanicaIface_raise_evTECXNoOprimido(&statechart);
+			}
 			/* Then Run an Cycle of Statechart */
-//			ej7_runCycle(&statechart);		// Run Cycle of Statechart
+			escaleraMecanica_runCycle(&statechart);		// Run Cycle of Statechart
 		}
 	}
 }
