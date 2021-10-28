@@ -146,7 +146,7 @@ Los estados definidos para el sistema son
 6. **FUERA DE SERVICIO**
 
 En la siguiente figura se puede observar la **máquina de estados** diseñada con la herramienta `Yakindu`:
-![docs/images/ej4_program](docs/images/ej4_program)
+![docs/images/ej4_program](docs/images/ej4_program.png)
 
 El funcionamiento del sistema es el siguiente. Se espera la señal proveniente del sensor de movimiento, mapeada con el botón `TEC 1` de la placa `EDU-CIAA-NXP` para fines didácticos. Si la puerta se encuentra cerrada entonces procede a abrirse y luego de cierto tiempo que la puerta se encuentra abierta se pasa al estado **PUERTA A CERRAR** donde se espera por una señal del sensor o un tiempo de 100ms para pasar al siguiente estado, que será **CERRANDO**. Una vez en este estado se ejecuta la función encargada de cerrar la puerta, y dicha acción se interrumpirá en cualquier momento que ocurra la señal `siSensor`, que se da cuando el sensor de proximidad detecta un obstáculo. Para verificar el correcto funcionamiento del sistema se asignaron leds a cada uno de los estados principales, para determinar cuando la puerta está abierta, cerrada y cuando se está cerrando . Del mismo modo se armó una secuencia en la que titilan 2 leds para indifcar que la puerta está fuera de servicio. Esto ocurriría en el caso de que la puerta se estuviera cerrando por un tiempo excesivamente grande sin ser interrumpida por el sensor de proximidad, lo cual indica que si la puerta no llegó a cerrarse (porque no ocurrió el evento que indica fin de carretera) luego del tiempo máximo estableido, hay un problema con los motores y se entra al etado **FUERA DE SERVICIO**.
 
