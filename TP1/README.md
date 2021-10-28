@@ -97,14 +97,19 @@ Para seleccionar la magnitud, ya sea frecuencia o tensión el proceso es similar
 
 Con fines de poder testear el código de forma visual con la placa EDU-CIAA se configuraron los leds integrados para que se prendan al ingresar a un menu y seleccionar una opción. 
 
-Finalmente se tienen las siguientes acciones, que para propósito del _proof of concept_ no han sido implementadas con su funcionalidad real:
+Finalmente se tienen las siguientes acciones, que para propósito del _proof of concept_ no han sido implementadas con su funcionalidad real, se exhibe el prototipo de cada una:
 
-1. _opSetForma_(Forma:string): void
-2. _opAmplitudUp_(Amplitud:integer):void
-3. _opAmplitudDown_(Amplitud:integer):void
-4. _opSetAmplitudFrec_(Amplitud:integer):void
-5. _opSetAmplitudVoltage_(Amplitud:integer):void
+```c
+void ej3Iface_opSetForma(const Ej3* handle, const sc_string Forma);
 
+void ej3Iface_opAmplitudUp(const Ej3* handle, const sc_integer Amplitud);
+
+void ej3Iface_opAmplitudDown(const Ej3* handle, const sc_integer Amplitud);
+
+void ej3Iface_opSetAmplitudFrec(const Ej3* handle, const sc_integer Amplitud);
+
+void ej3Iface_opSetAmplitudVoltage(const Ej3* handle, const sc_integer Amplitud);
+```
 
 # Ejercicio 4
 
@@ -119,6 +124,37 @@ Autor: Santiago Aupi
 
 ***
 Codigo fuente: [ej4](ej4)
+
+Con el objetivo de diseñar un sistema que cumpla con lo descripto por el enunciado se diseñan los siguientes eventos internos, siguiendo el mismo esquema que ya fue descripto:
+
+1. `siTECXOK`:
+	Este evento confirma que se oprimió un botón.
+2. `siSensor`:
+	Este evento marca que el sensor de proximidad de la puerta detectó un obstáculo.
+3. `siClosed`:
+	Este evento determina el fin de carrera al cerrar la puerta.
+4. `siOpen`:
+	Este evento determina el fin de carrera al abrir la puerta.
+
+Los estados definidos para el sistema son 
+
+1. **PUERTA CERRADA**
+2. **PUERTA ABIERTA**
+3. **PUERTA A CERRAR**
+4. **CERRANDO**
+5. **OBSTACULO**
+6. **FUERA DE SERVICIO**
+
+En la siguiente figura se puede observar la **máquina de estados** diseñada con la herramienta `Yakindu`:
+![docs/images/ej4_program](docs/images/ej4_program)
+
+El funcionamiento del sistema es el siguiente. Se espera la señal proveniente del sensor de movimiento, mapeada con el botón `TEC 1` de la placa `EDU-CIAA-NXP` para fines didácticos. Si la puerta se encuentra cerrada entonces procede a abrirse y luego de cierto tiempo que la puerta se encuentra abierta se pasa al estado **PUERTA A CERRAR** donde se espera por una señal del sensor o un tiempo de 100ms para pasar al siguiente estado, que será **CERRANDO**. Una vez en este estado se ejecuta la función encargada de cerrar la puerta, y dicha acción se interrumpirá en cualquier momento que ocurra la señal `siSensor`, que se da cuando el sensor de proximidad detecta un obstáculo. Para verificar el correcto funcionamiento del sistema se asignaron leds a cada uno de los estados principales, para determinar cuando la puerta está abierta, cerrada y cuando se está cerrando . Del mismo modo se armó una secuencia en la que titilan 2 leds para indifcar que la puerta está fuera de servicio. Esto ocurriría en el caso de que la puerta se estuviera cerrando por un tiempo excesivamente grande sin ser interrumpida por el sensor de proximidad, lo cual indica que si la puerta no llegó a cerrarse (porque no ocurrió el evento que indica fin de carretera) luego del tiempo máximo estableido, hay un problema con los motores y se entra al etado **FUERA DE SERVICIO**.
+
+A continuación se exhiben los prototipos de las funciones que se encargan del accionamiento del motor.
+```c
+void puerta_corredizaIface_opCloseDoor( Puerta_corrediza* handle, sc_integer DOOR_Number );
+void puerta_corredizaIface_opOpenDoor( Puerta_corrediza* handle, sc_integer DOOR_Number );
+```
 
 # Ejercicio 5
 
