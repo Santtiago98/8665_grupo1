@@ -91,6 +91,20 @@ Cada uno de estos estados abre lugar a la configuración de determinado tipo de 
 ![docs/images/ej3_program_formas.png](docs/images/ej3_program_formas.png)
 ![docs/images/ej3_program_magnitud.png](docs/images/ej3_program_magnitud.png)
 
+El funcionamiento del programa es el siguiente: se arranca en un estado de reposo, hasta que se presiona algún botón, ya sea `TEC1` o `TEC2`. Presionando `TEC1`se accede al menú de selección de forma de onda: presionando `TEC3` y `TEC4` se avanza o retrocede respectivamente en dicho menú, es decir las opciones _SENOIDAL_, _CUADRADA_ y _TRIANGULAR_. Para confirmar la selección se debe presionar nuevamente `TEC1`. 
+Para seleccionar la magnitud, ya sea frecuencia o tensión el proceso es similar. Presionando 1 vez `TEC2` se accede al menú que permite seleccionar qué magnitud se modificará: frecuencia o tensión, y con `TEC3` y/o `TEC4` se efectúa dicha selección. Para confirmar se debe presionar nuevamente `TEC2` y ahí se procede a determinar el valor de la magnitud elegida mediante los pulsadores  `TEC3` y/o `TEC4`. Nuevamente, para confirmar la selección se debe presionar `TEC2`.
+
+
+Con fines de poder testear el código de forma visual con la placa EDU-CIAA se configuraron los leds integrados para que se prendan al ingresar a un menu y seleccionar una opción. 
+
+Finalmente se tienen las siguientes acciones, que para propósito del _proof of concept_ no han sido implementadas con su funcionalidad real:
+
+1. _opSetForma_(Forma:string): void
+2. _opAmplitudUp_(Amplitud:integer):void
+3. _opAmplitudDown_(Amplitud:integer):void
+4. _opSetAmplitudFrec_(Amplitud:integer):void
+5. _opSetAmplitudVoltage_(Amplitud:integer):void
+
 
 # Ejercicio 4
 
