@@ -39,7 +39,7 @@
 /** \addtogroup statechart Simple UML Statechart example.
  ** @{ */
 
-#include "EscaleraMecanica.h"
+#include "ej7_CNC.h"
 #include "TimerTicks.h"
 
 

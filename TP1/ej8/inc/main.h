@@ -46,8 +46,11 @@ extern "C" {
 #endif
 
 /*==================[macros]=================================================*/
-#define SPEED_1 0
-#define SPEED_2 1
+#define EJE_X 0
+#define EJE_Y 1
+#define EJE_Z 2
+#define SENTIDO_1 true
+#define SENTIDO_2 false
 
 /*==================[typedef]================================================*/
 
