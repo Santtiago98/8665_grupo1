@@ -18813,7 +18813,7 @@ END GROUP
  *(.rodata.$Flash2*)
  *(.rodata.$MFlashB512*)
 
-.text           0x1a000000     0x21c8
+.text           0x1a000000     0x21bc
  FILL mask 0xff
                 0x1a000000                __vectors_start__ = ABSOLUTE (.)
  *(.isr_vector)
@@ -18826,19 +18826,19 @@ END GROUP
                 0x1a000114                . = ALIGN (0x4)
                 0x1a000114                __section_table_start = .
                 0x1a000114                __data_section_table = .
-                0x1a000114        0x4 LONG 0x1a0021d4 LOADADDR (.data)
+                0x1a000114        0x4 LONG 0x1a0021c8 LOADADDR (.data)
                 0x1a000118        0x4 LONG 0x10000000 ADDR (.data)
                 0x1a00011c        0x4 LONG 0x48 SIZEOF (.data)
-                0x1a000120        0x4 LONG 0x1a0021d4 LOADADDR (.data_RAM2)
+                0x1a000120        0x4 LONG 0x1a0021c8 LOADADDR (.data_RAM2)
                 0x1a000124        0x4 LONG 0x10080000 ADDR (.data_RAM2)
                 0x1a000128        0x4 LONG 0x0 SIZEOF (.data_RAM2)
-                0x1a00012c        0x4 LONG 0x1a0021d4 LOADADDR (.data_RAM3)
+                0x1a00012c        0x4 LONG 0x1a0021c8 LOADADDR (.data_RAM3)
                 0x1a000130        0x4 LONG 0x20000000 ADDR (.data_RAM3)
                 0x1a000134        0x4 LONG 0x0 SIZEOF (.data_RAM3)
-                0x1a000138        0x4 LONG 0x1a0021d4 LOADADDR (.data_RAM4)
+                0x1a000138        0x4 LONG 0x1a0021c8 LOADADDR (.data_RAM4)
                 0x1a00013c        0x4 LONG 0x20008000 ADDR (.data_RAM4)
                 0x1a000140        0x4 LONG 0x0 SIZEOF (.data_RAM4)
-                0x1a000144        0x4 LONG 0x1a0021d4 LOADADDR (.data_RAM5)
+                0x1a000144        0x4 LONG 0x1a0021c8 LOADADDR (.data_RAM5)
                 0x1a000148        0x4 LONG 0x2000c000 ADDR (.data_RAM5)
                 0x1a00014c        0x4 LONG 0x0 SIZEOF (.data_RAM5)
                 0x1a000150                __data_section_table_end = .
@@ -18950,435 +18950,436 @@ END GROUP
  .text.check_main_region_ESPERA_tr2_tr2
                 0x1a000362       0x16 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.check_main_region_ESPERA_tr3_tr3
-                0x1a000378       0x26 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a000378       0x18 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.check_Mover_Ejes_CNC_Idle_tr0_tr0
-                0x1a00039e       0x14 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a000390       0x14 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.check_Mover_Ejes_CNC_Movimiento_tr0_tr0
-                0x1a0003b2        0x4 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0003a4        0x4 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.check_Mover_Ejes_CNC_Movimiento_tr1_tr1
-                0x1a0003b6        0x4 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0003a8        0x4 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.enseq_TECX_NO_OPRIMIDO_default
-                0x1a0003ba        0xa examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0003ac        0xa examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.enseq_TECX_VALIDACION_default
-                0x1a0003c4        0xa examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0003b6        0xa examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.enseq_main_region_ESPERA_default
-                0x1a0003ce        0xa examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0003c0        0xa examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.exseq_TECX_NO_OPRIMIDO
-                0x1a0003d8        0x8 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0003ca        0x8 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.exseq_TECX_VALIDACION
-                0x1a0003e0        0x8 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0003d2        0x8 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.effect_TECX_VALIDACION_tr1
-                0x1a0003e8       0x10 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0003da       0x10 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.exseq_main_region_ESPERA
-                0x1a0003f8        0xa examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0003ea        0xa examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.effect_main_region_ESPERA_tr0
-                0x1a000402       0x1a examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0003f4       0x1a examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.effect_main_region_ESPERA_tr1
-                0x1a00041c       0x1a examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a00040e       0x1a examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.effect_main_region_ESPERA_tr3
-                0x1a000436       0x16 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a000428       0x16 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.exseq_Mover_Ejes_CNC_Idle
-                0x1a00044c        0xa examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a00043e        0xa examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.exseq_Mover_Ejes_CNC_Movimiento
-                0x1a000456        0xa examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a000448        0xa examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.react_TECX__entry_Default
-                0x1a000460        0x8 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a000452        0x8 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.enseq_TECX_default
-                0x1a000468        0x8 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a00045a        0x8 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.react_main_region__entry_Default
-                0x1a000470        0x8 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a000462        0x8 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.enseq_main_region_default
-                0x1a000478        0x8 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a00046a        0x8 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.enact_Mover_Ejes_CNC_Idle
-                0x1a000480        0x8 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a000472        0x8 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.enseq_Mover_Ejes_CNC_Idle_default
-                0x1a000488       0x12 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a00047a       0x12 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.react_Mover_Ejes_CNC__entry_Default
-                0x1a00049a        0x8 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a00048c        0x8 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.enseq_Mover_Ejes_CNC_default
-                0x1a0004a2        0x8 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a000494        0x8 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.effect_Mover_Ejes_CNC_Movimiento_tr0
-                0x1a0004aa       0x10 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a00049c       0x10 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.effect_Mover_Ejes_CNC_Movimiento_tr1
-                0x1a0004ba       0x10 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0004ac       0x10 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.react_Mover_Ejes_CNC_Movimiento
-                0x1a0004ca       0x24 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0004bc       0x24 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.exact_TECX_DEBOUNCE
-                0x1a0004ee        0xc examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0004e0        0xc examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.exseq_TECX_DEBOUNCE
-                0x1a0004fa        0xe examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0004ec        0xe examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.effect_TECX_DEBOUNCE_tr0
-                0x1a000508       0x10 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0004fa       0x10 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.react_TECX_DEBOUNCE
-                0x1a000518       0x14 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a00050a       0x14 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.exact_TECX_OPRIMIDO
-                0x1a00052c        0xc examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a00051e        0xc examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.exseq_TECX_OPRIMIDO
-                0x1a000538        0xe examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a00052a        0xe examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.effect_TECX_OPRIMIDO_tr0
-                0x1a000546       0x14 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a000538       0x14 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.enact_TECX_DEBOUNCE
-                0x1a00055a       0x10 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a00054c       0x10 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.enseq_TECX_DEBOUNCE_default
-                0x1a00056a       0x12 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a00055c       0x12 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.effect_TECX_NO_OPRIMIDO_tr0
-                0x1a00057c       0x10 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a00056e       0x10 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.react_TECX_NO_OPRIMIDO
-                0x1a00058c       0x14 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a00057e       0x14 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.enact_TECX_OPRIMIDO
-                0x1a0005a0       0x1a examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a000592       0x1a examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.enseq_TECX_OPRIMIDO_default
-                0x1a0005ba       0x12 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0005ac       0x12 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.effect_TECX_OPRIMIDO_tr1
-                0x1a0005cc       0x10 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0005be       0x10 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.react_TECX_OPRIMIDO
-                0x1a0005dc       0x24 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0005ce       0x24 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.effect_TECX_VALIDACION_tr0
-                0x1a000600       0x10 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0005f2       0x10 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.react_TECX_VALIDACION
-                0x1a000610       0x24 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a000602       0x24 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.effect_main_region_ESPERA_tr2
-                0x1a000634       0x1e examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a000626       0x1e examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.react_main_region_ESPERA
-                0x1a000652       0x42 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a000644       0x42 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.enact_Mover_Ejes_CNC_Movimiento
-                0x1a000694        0xc examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a000686        0xc examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.enseq_Mover_Ejes_CNC_Movimiento_default
-                0x1a0006a0       0x12 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a000692       0x12 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.effect_Mover_Ejes_CNC_Idle_tr0
-                0x1a0006b2       0x10 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0006a4       0x10 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.react_Mover_Ejes_CNC_Idle
-                0x1a0006c2       0x14 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0006b4       0x14 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
  .text.ej7_CNC_init
-                0x1a0006d6       0x28 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
-                0x1a0006d6                ej7_CNC_init
+                0x1a0006c8       0x28 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0006c8                ej7_CNC_init
  .text.ej7_CNC_enter
-                0x1a0006fe       0x16 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
-                0x1a0006fe                ej7_CNC_enter
+                0x1a0006f0       0x16 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0006f0                ej7_CNC_enter
+ *fill*         0x1a000706        0x2 ff
  .text.ej7_CNC_runCycle
-                0x1a000714       0x80 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
-                0x1a000714                ej7_CNC_runCycle
+                0x1a000708       0x80 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a000708                ej7_CNC_runCycle
  .text.ej7_CNC_raiseTimeEvent
-                0x1a000794       0x12 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
-                0x1a000794                ej7_CNC_raiseTimeEvent
+                0x1a000788       0x12 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a000788                ej7_CNC_raiseTimeEvent
  .text.ej7_CNCIface_raise_evTECXNoOprimido
-                0x1a0007a6        0x6 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
-                0x1a0007a6                ej7_CNCIface_raise_evTECXNoOprimido
+                0x1a00079a        0x6 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a00079a                ej7_CNCIface_raise_evTECXNoOprimido
  .text.ej7_CNCIface_raise_evTECXOprimido
-                0x1a0007ac        0x8 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
-                0x1a0007ac                ej7_CNCIface_raise_evTECXOprimido
+                0x1a0007a0        0x8 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0007a0                ej7_CNCIface_raise_evTECXOprimido
  .text.myTickHook
-                0x1a0007b4        0xc examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/main.o
-                0x1a0007b4                myTickHook
+                0x1a0007a8        0xc examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/main.o
+                0x1a0007a8                myTickHook
  .text.ej7_CNCIface_opMoverEje
-                0x1a0007c0       0x1e examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/main.o
-                0x1a0007c0                ej7_CNCIface_opMoverEje
+                0x1a0007b4       0x1e examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/main.o
+                0x1a0007b4                ej7_CNCIface_opMoverEje
  .text.ej7_CNCIface_opCambiarEje
-                0x1a0007de       0x4a examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/main.o
-                0x1a0007de                ej7_CNCIface_opCambiarEje
+                0x1a0007d2       0x4a examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/main.o
+                0x1a0007d2                ej7_CNCIface_opCambiarEje
  .text.ej7_CNCIface_opApagarEje
-                0x1a000828       0x14 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/main.o
-                0x1a000828                ej7_CNCIface_opApagarEje
+                0x1a00081c       0x14 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/main.o
+                0x1a00081c                ej7_CNCIface_opApagarEje
  .text.ej7_CNC_setTimer
-                0x1a00083c       0x1c examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/main.o
-                0x1a00083c                ej7_CNC_setTimer
+                0x1a000830       0x1c examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/main.o
+                0x1a000830                ej7_CNC_setTimer
  .text.ej7_CNC_unsetTimer
-                0x1a000858       0x14 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/main.o
-                0x1a000858                ej7_CNC_unsetTimer
+                0x1a00084c       0x14 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/main.o
+                0x1a00084c                ej7_CNC_unsetTimer
  .text.Buttons_GetStatus_
-                0x1a00086c       0x2a examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/main.o
-                0x1a00086c                Buttons_GetStatus_
- *fill*         0x1a000896        0x2 ff
- .text.main     0x1a000898       0xa4 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/main.o
-                0x1a000898                main
+                0x1a000860       0x2a examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/main.o
+                0x1a000860                Buttons_GetStatus_
+ *fill*         0x1a00088a        0x2 ff
+ .text.main     0x1a00088c       0xa4 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/main.o
+                0x1a00088c                main
  .text.InitTimerTicks
-                0x1a00093c       0x22 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/TimerTicks.o
-                0x1a00093c                InitTimerTicks
+                0x1a000930       0x22 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/TimerTicks.o
+                0x1a000930                InitTimerTicks
  .text.SetNewTimerTick
-                0x1a00095e       0x32 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/TimerTicks.o
-                0x1a00095e                SetNewTimerTick
+                0x1a000952       0x32 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/TimerTicks.o
+                0x1a000952                SetNewTimerTick
  .text.UnsetTimerTick
-                0x1a000990       0x34 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/TimerTicks.o
-                0x1a000990                UnsetTimerTick
+                0x1a000984       0x34 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/TimerTicks.o
+                0x1a000984                UnsetTimerTick
  .text.IsPendEvent
-                0x1a0009c4       0x2e examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/TimerTicks.o
-                0x1a0009c4                IsPendEvent
+                0x1a0009b8       0x2e examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/TimerTicks.o
+                0x1a0009b8                IsPendEvent
  .text.MarkAsAttEvent
-                0x1a0009f2       0x24 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/TimerTicks.o
-                0x1a0009f2                MarkAsAttEvent
+                0x1a0009e6       0x24 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/TimerTicks.o
+                0x1a0009e6                MarkAsAttEvent
  .text.UpdateTimers
-                0x1a000a16       0x44 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/TimerTicks.o
-                0x1a000a16                UpdateTimers
+                0x1a000a0a       0x44 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/TimerTicks.o
+                0x1a000a0a                UpdateTimers
  .text.initialise_monitor_handles
-                0x1a000a5a        0x2 examples/c/sapi/statecharts/ej7_CNC/out/libs/cmsis_core//src/armv7m_startup.o
-                0x1a000a5a                initialise_monitor_handles
+                0x1a000a4e        0x2 examples/c/sapi/statecharts/ej7_CNC/out/libs/cmsis_core//src/armv7m_startup.o
+                0x1a000a4e                initialise_monitor_handles
  .text.Reset_Handler
-                0x1a000a5c       0x88 examples/c/sapi/statecharts/ej7_CNC/out/libs/cmsis_core//src/armv7m_startup.o
-                0x1a000a5c                Reset_Handler
- .text._fini    0x1a000ae4        0x2 examples/c/sapi/statecharts/ej7_CNC/out/libs/cmsis_core//src/armv7m_startup.o
-                0x1a000ae4                _fini
- .text._init    0x1a000ae6        0x2 examples/c/sapi/statecharts/ej7_CNC/out/libs/cmsis_core//src/armv7m_startup.o
-                0x1a000ae6                _init
+                0x1a000a50       0x88 examples/c/sapi/statecharts/ej7_CNC/out/libs/cmsis_core//src/armv7m_startup.o
+                0x1a000a50                Reset_Handler
+ .text._fini    0x1a000ad8        0x2 examples/c/sapi/statecharts/ej7_CNC/out/libs/cmsis_core//src/armv7m_startup.o
+                0x1a000ad8                _fini
+ .text._init    0x1a000ada        0x2 examples/c/sapi/statecharts/ej7_CNC/out/libs/cmsis_core//src/armv7m_startup.o
+                0x1a000ada                _init
  .text.Board_SetupMuxing
-                0x1a000ae8       0x38 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
-                0x1a000ae8                Board_SetupMuxing
+                0x1a000adc       0x38 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x1a000adc                Board_SetupMuxing
  .text.Board_SetupClocking
-                0x1a000b20       0x6c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
-                0x1a000b20                Board_SetupClocking
+                0x1a000b14       0x6c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x1a000b14                Board_SetupClocking
  .text.Board_SystemInit
-                0x1a000b8c        0xc examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
-                0x1a000b8c                Board_SystemInit
+                0x1a000b80        0xc examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x1a000b80                Board_SystemInit
  .text.Board_LED_Init
-                0x1a000b98       0x44 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x1a000b8c       0x44 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_TEC_Init
-                0x1a000bdc       0x40 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x1a000bd0       0x40 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_GPIO_Init
-                0x1a000c1c       0x40 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x1a000c10       0x40 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_ADC_Init
-                0x1a000c5c       0x30 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x1a000c50       0x30 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_SPI_Init
-                0x1a000c8c       0x38 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x1a000c80       0x38 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_I2C_Init
-                0x1a000cc4       0x24 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x1a000cb8       0x24 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_Debug_Init
-                0x1a000ce8       0x24 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x1a000ce8                Board_Debug_Init
+                0x1a000cdc       0x24 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x1a000cdc                Board_Debug_Init
  .text.Board_Init
-                0x1a000d0c       0x30 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x1a000d0c                Board_Init
+                0x1a000d00       0x30 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x1a000d00                Board_Init
  .text.__stdio_init
-                0x1a000d3c        0x8 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x1a000d3c                __stdio_init
+                0x1a000d30        0x8 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x1a000d30                __stdio_init
  .text.Chip_SSP_GetClockIndex
-                0x1a000d44       0x14 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x1a000d38       0x14 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
  .text.Chip_SSP_GetPeriphClockIndex
-                0x1a000d58       0x18 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x1a000d4c       0x18 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
  .text.Chip_SSP_SetClockRate
-                0x1a000d70       0x12 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
-                0x1a000d70                Chip_SSP_SetClockRate
+                0x1a000d64       0x12 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x1a000d64                Chip_SSP_SetClockRate
  .text.Chip_SSP_SetBitRate
-                0x1a000d82       0x3e examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
-                0x1a000d82                Chip_SSP_SetBitRate
+                0x1a000d76       0x3e examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x1a000d76                Chip_SSP_SetBitRate
  .text.Chip_SSP_Init
-                0x1a000dc0       0x38 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
-                0x1a000dc0                Chip_SSP_Init
+                0x1a000db4       0x38 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x1a000db4                Chip_SSP_Init
  .text.Chip_I2C_EventHandler
-                0x1a000df8       0x20 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
-                0x1a000df8                Chip_I2C_EventHandler
+                0x1a000dec       0x20 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+                0x1a000dec                Chip_I2C_EventHandler
  .text.Chip_I2C_Init
-                0x1a000e18       0x24 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
-                0x1a000e18                Chip_I2C_Init
+                0x1a000e0c       0x24 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+                0x1a000e0c                Chip_I2C_Init
  .text.Chip_I2C_SetClockRate
-                0x1a000e3c       0x38 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
-                0x1a000e3c                Chip_I2C_SetClockRate
+                0x1a000e30       0x38 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+                0x1a000e30                Chip_I2C_SetClockRate
  .text.Chip_GPIO_Init
-                0x1a000e74        0x2 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
-                0x1a000e74                Chip_GPIO_Init
- *fill*         0x1a000e76        0x2 ff
+                0x1a000e68        0x2 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+                0x1a000e68                Chip_GPIO_Init
+ *fill*         0x1a000e6a        0x2 ff
  .text.Chip_ADC_GetClockIndex
-                0x1a000e78       0x14 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x1a000e6c       0x14 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
  .text.getClkDiv
-                0x1a000e8c       0x32 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- *fill*         0x1a000ebe        0x2 ff
+                0x1a000e80       0x32 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ *fill*         0x1a000eb2        0x2 ff
  .text.Chip_ADC_Init
-                0x1a000ec0       0x40 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x1a000ec0                Chip_ADC_Init
+                0x1a000eb4       0x40 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x1a000eb4                Chip_ADC_Init
  .text.Chip_ADC_SetSampleRate
-                0x1a000f00       0x32 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x1a000f00                Chip_ADC_SetSampleRate
+                0x1a000ef4       0x32 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x1a000ef4                Chip_ADC_SetSampleRate
  .text.Chip_ADC_SetResolution
-                0x1a000f32        0xc examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x1a000f32                Chip_ADC_SetResolution
- *fill*         0x1a000f3e        0x2 ff
+                0x1a000f26        0xc examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x1a000f26                Chip_ADC_SetResolution
+ *fill*         0x1a000f32        0x2 ff
  .text.Chip_SetupCoreClock
-                0x1a000f40      0x158 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
-                0x1a000f40                Chip_SetupCoreClock
+                0x1a000f34      0x158 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+                0x1a000f34                Chip_SetupCoreClock
  .text.SystemCoreClockUpdate
-                0x1a001098       0x14 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
-                0x1a001098                SystemCoreClockUpdate
+                0x1a00108c       0x14 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+                0x1a00108c                SystemCoreClockUpdate
  .text.pll_calc_divs
-                0x1a0010ac       0xa0 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x1a0010a0       0xa0 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .text.pll_get_frac
-                0x1a00114c      0x10c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x1a001140      0x10c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .text.Chip_Clock_FindBaseClock
-                0x1a001258       0x4c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x1a00124c       0x4c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .text.Chip_Clock_EnableCrystal
-                0x1a0012a4       0x4c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x1a0012a4                Chip_Clock_EnableCrystal
+                0x1a001298       0x4c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x1a001298                Chip_Clock_EnableCrystal
  .text.Chip_Clock_GetDividerSource
-                0x1a0012f0       0x1c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x1a0012f0                Chip_Clock_GetDividerSource
+                0x1a0012e4       0x1c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x1a0012e4                Chip_Clock_GetDividerSource
  .text.Chip_Clock_GetDividerDivisor
-                0x1a00130c       0x1c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x1a00130c                Chip_Clock_GetDividerDivisor
+                0x1a001300       0x1c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x1a001300                Chip_Clock_GetDividerDivisor
  .text.Chip_Clock_GetClockInputHz
-                0x1a001328       0xb8 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x1a001328                Chip_Clock_GetClockInputHz
+                0x1a00131c       0xb8 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x1a00131c                Chip_Clock_GetClockInputHz
  .text.Chip_Clock_CalcMainPLLValue
-                0x1a0013e0       0x80 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x1a0013e0                Chip_Clock_CalcMainPLLValue
+                0x1a0013d4       0x80 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x1a0013d4                Chip_Clock_CalcMainPLLValue
  .text.Chip_Clock_GetMainPLLHz
-                0x1a001460       0x6c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x1a001460                Chip_Clock_GetMainPLLHz
+                0x1a001454       0x6c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x1a001454                Chip_Clock_GetMainPLLHz
  .text.Chip_Clock_GetDivRate
-                0x1a0014cc       0x22 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- *fill*         0x1a0014ee        0x2 ff
+                0x1a0014c0       0x22 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ *fill*         0x1a0014e2        0x2 ff
  .text.Chip_Clock_SetBaseClock
-                0x1a0014f0       0x58 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x1a0014f0                Chip_Clock_SetBaseClock
+                0x1a0014e4       0x58 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x1a0014e4                Chip_Clock_SetBaseClock
  .text.Chip_Clock_GetBaseClock
-                0x1a001548       0x26 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x1a001548                Chip_Clock_GetBaseClock
+                0x1a00153c       0x26 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x1a00153c                Chip_Clock_GetBaseClock
  .text.Chip_Clock_GetBaseClocktHz
-                0x1a00156e        0xc examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x1a00156e                Chip_Clock_GetBaseClocktHz
- *fill*         0x1a00157a        0x2 ff
+                0x1a001562        0xc examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x1a001562                Chip_Clock_GetBaseClocktHz
+ *fill*         0x1a00156e        0x2 ff
  .text.Chip_Clock_EnableOpts
-                0x1a00157c       0x3c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x1a00157c                Chip_Clock_EnableOpts
+                0x1a001570       0x3c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x1a001570                Chip_Clock_EnableOpts
  .text.Chip_Clock_Enable
-                0x1a0015b8       0x34 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x1a0015b8                Chip_Clock_Enable
+                0x1a0015ac       0x34 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x1a0015ac                Chip_Clock_Enable
  .text.Chip_Clock_GetRate
-                0x1a0015ec       0x4c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x1a0015ec                Chip_Clock_GetRate
+                0x1a0015e0       0x4c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x1a0015e0                Chip_Clock_GetRate
  .text.Chip_UART_GetIndex
-                0x1a001638       0x2c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x1a00162c       0x2c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
  .text.Chip_UART_Init
-                0x1a001664       0x54 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
-                0x1a001664                Chip_UART_Init
+                0x1a001658       0x54 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x1a001658                Chip_UART_Init
  .text.Chip_UART_SetBaudFDR
-                0x1a0016b8       0xdc examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
-                0x1a0016b8                Chip_UART_SetBaudFDR
+                0x1a0016ac       0xdc examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x1a0016ac                Chip_UART_SetBaudFDR
  .text.SystemInit
-                0x1a001794       0x38 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_startup/src/sysinit.o
-                0x1a001794                SystemInit
+                0x1a001788       0x38 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_startup/src/sysinit.o
+                0x1a001788                SystemInit
  .text.cyclesCounterInit
-                0x1a0017cc       0x1c examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/core/src/sapi_cyclesCounter.o
-                0x1a0017cc                cyclesCounterInit
+                0x1a0017c0       0x1c examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/core/src/sapi_cyclesCounter.o
+                0x1a0017c0                cyclesCounterInit
  .text.gpioObtainPinInit
-                0x1a0017e8       0x34 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
+                0x1a0017dc       0x34 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
  .text.gpioInit
-                0x1a00181c      0x1ac examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
-                0x1a00181c                gpioInit
+                0x1a001810      0x1ac examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
+                0x1a001810                gpioInit
  .text.gpioWrite
-                0x1a0019c8       0x6a examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
-                0x1a0019c8                gpioWrite
+                0x1a0019bc       0x6a examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
+                0x1a0019bc                gpioWrite
  .text.gpioRead
-                0x1a001a32       0x68 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
-                0x1a001a32                gpioRead
- *fill*         0x1a001a9a        0x2 ff
+                0x1a001a26       0x68 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
+                0x1a001a26                gpioRead
+ *fill*         0x1a001a8e        0x2 ff
  .text.tickCallbackSet
-                0x1a001a9c       0x20 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_tick.o
-                0x1a001a9c                tickCallbackSet
+                0x1a001a90       0x20 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_tick.o
+                0x1a001a90                tickCallbackSet
  .text.tickPowerSet
-                0x1a001abc       0x18 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_tick.o
-                0x1a001abc                tickPowerSet
+                0x1a001ab0       0x18 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_tick.o
+                0x1a001ab0                tickPowerSet
  .text.tickInit
-                0x1a001ad4       0x7c examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_tick.o
-                0x1a001ad4                tickInit
+                0x1a001ac8       0x7c examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_tick.o
+                0x1a001ac8                tickInit
  .text.SysTick_Handler
-                0x1a001b50       0x2c examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_tick.o
-                0x1a001b50                SysTick_Handler
+                0x1a001b44       0x2c examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_tick.o
+                0x1a001b44                SysTick_Handler
  .text.USB0_IRQHandler
-                0x1a001b7c       0x1c examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/usb/device/src/sapi_usb_device.o
-                0x1a001b7c                USB0_IRQHandler
+                0x1a001b70       0x1c examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+                0x1a001b70                USB0_IRQHandler
  .text.boardInit
-                0x1a001b98       0x74 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/board/src/sapi_board.o
-                0x1a001b98                boardInit
- .text          0x1a001c0c       0x30 c:/ciaa_software_1.1-win/tools/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
-                0x1a001c0c                __aeabi_uldivmod
+                0x1a001b8c       0x74 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/board/src/sapi_board.o
+                0x1a001b8c                boardInit
+ .text          0x1a001c00       0x30 c:/ciaa_software_1.1-win/tools/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
+                0x1a001c00                __aeabi_uldivmod
  .text.__udivmoddi4
-                0x1a001c3c      0x2d0 c:/ciaa_software_1.1-win/tools/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
-                0x1a001c3c                __udivmoddi4
- .text          0x1a001f0c        0x4 c:/ciaa_software_1.1-win/tools/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
-                0x1a001f0c                __aeabi_idiv0
-                0x1a001f0c                __aeabi_ldiv0
+                0x1a001c30      0x2d0 c:/ciaa_software_1.1-win/tools/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+                0x1a001c30                __udivmoddi4
+ .text          0x1a001f00        0x4 c:/ciaa_software_1.1-win/tools/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
+                0x1a001f00                __aeabi_idiv0
+                0x1a001f00                __aeabi_ldiv0
  .text.__libc_init_array
-                0x1a001f10       0x48 c:/ciaa_software_1.1-win/tools/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-init.o)
-                0x1a001f10                __libc_init_array
- .text.memset   0x1a001f58       0x10 c:/ciaa_software_1.1-win/tools/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-memset.o)
-                0x1a001f58                memset
+                0x1a001f04       0x48 c:/ciaa_software_1.1-win/tools/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-init.o)
+                0x1a001f04                __libc_init_array
+ .text.memset   0x1a001f4c       0x10 c:/ciaa_software_1.1-win/tools/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-memset.o)
+                0x1a001f4c                memset
  *(.rodata .rodata.* .constdata .constdata.*)
  .rodata.InitClkStates
-                0x1a001f68        0x4 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x1a001f5c        0x4 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
  .rodata.pinmuxing
-                0x1a001f6c       0x74 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x1a001f60       0x74 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
  .rodata.ExtRateIn
-                0x1a001fe0        0x4 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x1a001fe0                ExtRateIn
+                0x1a001fd4        0x4 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x1a001fd4                ExtRateIn
  .rodata.GpioButtons
-                0x1a001fe4        0x8 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x1a001fd8        0x8 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .rodata.GpioLeds
-                0x1a001fec        0xc examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x1a001fe0        0xc examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .rodata.GpioPorts
-                0x1a001ff8       0x12 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- *fill*         0x1a00200a        0x2 ff
+                0x1a001fec       0x12 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ *fill*         0x1a001ffe        0x2 ff
  .rodata.OscRateIn
-                0x1a00200c        0x4 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x1a00200c                OscRateIn
+                0x1a002000        0x4 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x1a002000                OscRateIn
  .rodata.InitClkStates
-                0x1a002010       0x48 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .rodata        0x1a002058        0x4 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x1a002004       0x48 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .rodata        0x1a00204c        0x4 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .rodata.Chip_Clock_SetDivider.str1.4
-                0x1a00205c        0x8 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x1a002050        0x8 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
                                   0x6 (size before relaxing)
  .rodata.periph_to_base
-                0x1a002064       0x6c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x1a002058       0x6c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .rodata.UART_BClock
-                0x1a0020d0        0x8 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x1a0020c4        0x8 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
  .rodata.UART_PClock
-                0x1a0020d8        0x8 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x1a0020cc        0x8 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
  .rodata.gpioPinsInit
-                0x1a0020e0       0xe6 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
-                0x1a0020e0                gpioPinsInit
-                0x1a0021c8                . = ALIGN (0x4)
- *fill*         0x1a0021c6        0x2 ff
+                0x1a0020d4       0xe6 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
+                0x1a0020d4                gpioPinsInit
+                0x1a0021bc                . = ALIGN (0x4)
+ *fill*         0x1a0021ba        0x2 ff
 
-.glue_7         0x1a0021c8        0x0
- .glue_7        0x1a0021c8        0x0 linker stubs
+.glue_7         0x1a0021bc        0x0
+ .glue_7        0x1a0021bc        0x0 linker stubs
 
-.glue_7t        0x1a0021c8        0x0
- .glue_7t       0x1a0021c8        0x0 linker stubs
+.glue_7t        0x1a0021bc        0x0
+ .glue_7t       0x1a0021bc        0x0 linker stubs
 
-.vfp11_veneer   0x1a0021c8        0x0
- .vfp11_veneer  0x1a0021c8        0x0 linker stubs
+.vfp11_veneer   0x1a0021bc        0x0
+ .vfp11_veneer  0x1a0021bc        0x0 linker stubs
 
-.v4_bx          0x1a0021c8        0x0
- .v4_bx         0x1a0021c8        0x0 linker stubs
+.v4_bx          0x1a0021bc        0x0
+ .v4_bx         0x1a0021bc        0x0 linker stubs
 
-.iplt           0x1a0021c8        0x0
- .iplt          0x1a0021c8        0x0 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
-                0x1a0021c8                . = ALIGN (0x4)
+.iplt           0x1a0021bc        0x0
+ .iplt          0x1a0021bc        0x0 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+                0x1a0021bc                . = ALIGN (0x4)
 
-.preinit_array  0x1a0021c8        0x0
-                0x1a0021c8                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x1a0021bc        0x0
+                0x1a0021bc                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x1a0021c8                PROVIDE (__preinit_array_end = .)
+                0x1a0021bc                PROVIDE (__preinit_array_end = .)
 
-.init_array     0x1a0021c8        0x4
-                0x1a0021c8                PROVIDE (__init_array_start = .)
+.init_array     0x1a0021bc        0x4
+                0x1a0021bc                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x1a0021c8        0x4 examples/c/sapi/statecharts/ej7_CNC/out/libs/sys_newlib//src/system.o
-                0x1a0021cc                PROVIDE (__init_array_end = .)
-                0x1a0021cc                . = ALIGN (0x4)
+ .init_array    0x1a0021bc        0x4 examples/c/sapi/statecharts/ej7_CNC/out/libs/sys_newlib//src/system.o
+                0x1a0021c0                PROVIDE (__init_array_end = .)
+                0x1a0021c0                . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x1a0021cc                __exidx_start = .
+                0x1a0021c0                __exidx_start = .
 
-.ARM.exidx      0x1a0021cc        0x8
+.ARM.exidx      0x1a0021c0        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
  .ARM.exidx.text.__udivmoddi4
-                0x1a0021cc        0x8 c:/ciaa_software_1.1-win/tools/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
-                0x1a0021d4                __exidx_end = .
-                0x1a0021d4                _etext = .
+                0x1a0021c0        0x8 c:/ciaa_software_1.1-win/tools/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+                0x1a0021c8                __exidx_end = .
+                0x1a0021c8                _etext = .
 
-.rel.dyn        0x1a0021d4        0x0
- .rel.iplt      0x1a0021d4        0x0 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+.rel.dyn        0x1a0021c8        0x0
+ .rel.iplt      0x1a0021c8        0x0 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
 
-.data_RAM2      0x10080000        0x0 load address 0x1a0021d4
+.data_RAM2      0x10080000        0x0 load address 0x1a0021c8
  FILL mask 0xff
  *(.ramfunc.$RAM2)
  *(.ramfunc.$RamLoc40)
@@ -19386,7 +19387,7 @@ END GROUP
  *(.data.$RamLoc40*)
                 0x10080000                . = ALIGN (0x4)
 
-.data_RAM3      0x20000000        0x0 load address 0x1a0021d4
+.data_RAM3      0x20000000        0x0 load address 0x1a0021c8
  FILL mask 0xff
  *(.ramfunc.$RAM3)
  *(.ramfunc.$RamAHB32)
@@ -19394,7 +19395,7 @@ END GROUP
  *(.data.$RamAHB32*)
                 0x20000000                . = ALIGN (0x4)
 
-.data_RAM4      0x20008000        0x0 load address 0x1a0021d4
+.data_RAM4      0x20008000        0x0 load address 0x1a0021c8
  FILL mask 0xff
  *(.ramfunc.$RAM4)
  *(.ramfunc.$RamAHB16)
@@ -19402,7 +19403,7 @@ END GROUP
  *(.data.$RamAHB16*)
                 0x20008000                . = ALIGN (0x4)
 
-.data_RAM5      0x2000c000        0x0 load address 0x1a0021d4
+.data_RAM5      0x2000c000        0x0 load address 0x1a0021c8
  FILL mask 0xff
  *(.ramfunc.$RAM5)
  *(.ramfunc.$RamAHB_ETB16)
@@ -19416,7 +19417,7 @@ END GROUP
                 0x10000000                . = ALIGN (0x4)
                 0x10000000                _end_uninit_RESERVED = .
 
-.data           0x10000000       0x48 load address 0x1a0021d4
+.data           0x10000000       0x48 load address 0x1a0021c8
  FILL mask 0xff
                 0x10000000                _data = .
  *(vtable)
@@ -19432,7 +19433,7 @@ END GROUP
                 0x10000048                . = ALIGN (0x4)
                 0x10000048                _edata = .
 
-.igot.plt       0x10000048        0x0 load address 0x1a00221c
+.igot.plt       0x10000048        0x0 load address 0x1a002210
  .igot.plt      0x10000048        0x0 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
 
 .bss_RAM2       0x10080000        0x0
@@ -19511,7 +19512,7 @@ END GROUP
                 0x100000b8                _end_noinit = .
                 0x100000b8                PROVIDE (_pvHeapStart = .)
                 0x10008000                PROVIDE (_vStackTop = (__top_RamLoc32 - 0x0))
-                0x53ff6e32                PROVIDE (__valid_user_code_checksum = (0x0 - ((((((_vStackTop + (Reset_Handler + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
+                0x53ff6e3e                PROVIDE (__valid_user_code_checksum = (0x0 - ((((((_vStackTop + (Reset_Handler + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
 OUTPUT(examples/c/sapi/statecharts/ej7_CNC/out/ej7_CNC.elf elf32-littlearm)
 
 .debug_info     0x00000000    0x1cb76
@@ -19564,25 +19565,25 @@ OUTPUT(examples/c/sapi/statecharts/ej7_CNC/out/ej7_CNC.elf elf32-littlearm)
  .debug_abbrev  0x00003a2e      0x448 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/usb/device/src/sapi_usb_device.o
  .debug_abbrev  0x00003e76      0x242 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/board/src/sapi_board.o
 
-.debug_loc      0x00000000     0x8274
- .debug_loc     0x00000000      0xdf5 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
- .debug_loc     0x00000df5      0x405 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/main.o
- .debug_loc     0x000011fa      0x2f1 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/TimerTicks.o
- .debug_loc     0x000014eb      0x282 examples/c/sapi/statecharts/ej7_CNC/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_loc     0x0000176d      0x653 examples/c/sapi/statecharts/ej7_CNC/out/libs/sys_newlib//src/system.o
- .debug_loc     0x00001dc0      0x10f examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_loc     0x00001ecf      0x659 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_loc     0x00002528      0xfd3 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_loc     0x000034fb      0xe82 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_loc     0x0000437d      0x738 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_loc     0x00004ab5      0x1e2 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_loc     0x00004c97     0x1505 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_loc     0x0000619c      0xf38 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_loc     0x000070d4       0x15 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_loc     0x000070e9      0x109 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/core/src/sapi_cyclesCounter.o
- .debug_loc     0x000071f2      0xaff examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
- .debug_loc     0x00007cf1      0x1a3 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_tick.o
- .debug_loc     0x00007e94      0x3e0 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+.debug_loc      0x00000000     0x823a
+ .debug_loc     0x00000000      0xdbb examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+ .debug_loc     0x00000dbb      0x405 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/main.o
+ .debug_loc     0x000011c0      0x2f1 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/TimerTicks.o
+ .debug_loc     0x000014b1      0x282 examples/c/sapi/statecharts/ej7_CNC/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_loc     0x00001733      0x653 examples/c/sapi/statecharts/ej7_CNC/out/libs/sys_newlib//src/system.o
+ .debug_loc     0x00001d86      0x10f examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_loc     0x00001e95      0x659 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_loc     0x000024ee      0xfd3 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_loc     0x000034c1      0xe82 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_loc     0x00004343      0x738 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_loc     0x00004a7b      0x1e2 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_loc     0x00004c5d     0x1505 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_loc     0x00006162      0xf38 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_loc     0x0000709a       0x15 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_loc     0x000070af      0x109 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_loc     0x000071b8      0xaff examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
+ .debug_loc     0x00007cb7      0x1a3 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_tick.o
+ .debug_loc     0x00007e5a      0x3e0 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/usb/device/src/sapi_usb_device.o
 
 .debug_aranges  0x00000000      0xb90
  .debug_aranges
@@ -19821,30 +19822,30 @@ OUTPUT(examples/c/sapi/statecharts/ej7_CNC/out/ej7_CNC.elf elf32-littlearm)
  .debug_macro   0x0000bf1d      0x562 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/usb/device/src/sapi_usb_device.o
  .debug_macro   0x0000c47f      0x486 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/board/src/sapi_board.o
 
-.debug_line     0x00000000     0xf678
- .debug_line    0x00000000      0xfbb examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
- .debug_line    0x00000fbb     0x1403 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/main.o
- .debug_line    0x000023be      0x5a5 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/TimerTicks.o
- .debug_line    0x00002963      0x267 examples/c/sapi/statecharts/ej7_CNC/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_line    0x00002bca      0x645 examples/c/sapi/statecharts/ej7_CNC/out/libs/sys_newlib//src/system.o
- .debug_line    0x0000320f      0x8ed examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_line    0x00003afc      0xd56 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_line    0x00004852     0x122e examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_line    0x00005a80     0x1027 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_line    0x00006aa7      0x6f5 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
- .debug_line    0x0000719c      0xa68 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_line    0x00007c04      0x907 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_line    0x0000850b      0x77c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
- .debug_line    0x00008c87     0x1420 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_line    0x0000a0a7      0xeb3 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_line    0x0000af5a      0x806 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
- .debug_line    0x0000b760      0x832 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_line    0x0000bf92       0x44 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_startup/src/crp.o
- .debug_line    0x0000bfd6      0x968 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/core/src/sapi_cyclesCounter.o
- .debug_line    0x0000c93e      0xc20 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
- .debug_line    0x0000d55e      0xa9d examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_tick.o
- .debug_line    0x0000dffb      0xd44 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/usb/device/src/sapi_usb_device.o
- .debug_line    0x0000ed3f      0x939 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/board/src/sapi_board.o
+.debug_line     0x00000000     0xf662
+ .debug_line    0x00000000      0xfa5 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
+ .debug_line    0x00000fa5     0x1403 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/main.o
+ .debug_line    0x000023a8      0x5a5 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/src/TimerTicks.o
+ .debug_line    0x0000294d      0x267 examples/c/sapi/statecharts/ej7_CNC/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_line    0x00002bb4      0x645 examples/c/sapi/statecharts/ej7_CNC/out/libs/sys_newlib//src/system.o
+ .debug_line    0x000031f9      0x8ed examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_line    0x00003ae6      0xd56 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_line    0x0000483c     0x122e examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_line    0x00005a6a     0x1027 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_line    0x00006a91      0x6f5 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_line    0x00007186      0xa68 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_line    0x00007bee      0x907 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_line    0x000084f5      0x77c examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_line    0x00008c71     0x1420 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_line    0x0000a091      0xeb3 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_line    0x0000af44      0x806 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_line    0x0000b74a      0x832 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_line    0x0000bf7c       0x44 examples/c/sapi/statecharts/ej7_CNC/out/libs/lpc_open/lpc_startup/src/crp.o
+ .debug_line    0x0000bfc0      0x968 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_line    0x0000c928      0xc20 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
+ .debug_line    0x0000d548      0xa9d examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_tick.o
+ .debug_line    0x0000dfe5      0xd44 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_line    0x0000ed29      0x939 examples/c/sapi/statecharts/ej7_CNC/out/libs/sapi/sapi_v0.6.2/board/src/sapi_board.o
 
 .debug_str      0x00000000    0x29eed
  .debug_str     0x00000000     0x7817 examples/c/sapi/statecharts/ej7_CNC/out/examples/c/sapi/statecharts/ej7_CNC/gen/Ej7_CNC.o
