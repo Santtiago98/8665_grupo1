@@ -25,7 +25,7 @@ A continuación se muestra la secuencia de funciones que invoca el programa __sw
 
 ![image](https://user-images.githubusercontent.com/39803285/143322016-e4823375-0de3-4b9d-80b2-e88b0ee6b66f.png)
 
-| Función        | Descripción   | Biblioteca  |
+| Función       | Descripción   | Biblioteca  |
 | ------------- |:-------------:| -----:|
 | boardConfig()   | Se encarga de inicializar todo lo necesario para la EDU-CIAA | sAPI_board.h |
 | delayConfig() | Configura el tiempo de delay que se utilizará luego | sapi_delay.h |
@@ -36,13 +36,13 @@ A continuación se muestra la secuencia de funciones que invoca el programa __sw
 Los puertos utilizados son los siguientes
 
 | Puerto  | Descripción |
-| ------------- |: -------------: |
+| ------------- | -------------: |
 | LEDB  | Puerto 84 de la EDU-CIAA  |
 | LED3  | Puerto 106 de la EDU-CIAA | 
 
-Puerto del LEDB
+Puerto del LEDB \
 ![image](https://user-images.githubusercontent.com/39803285/143323141-a99f9a86-98a4-4f71-b43b-80ba19d56542.png)
 
-Puerto del LED3
+Puerto del LED3 \
 ![image](https://user-images.githubusercontent.com/39803285/143323167-1177b13d-211d-4100-a36e-5c5fc600f1c0.png)
 
