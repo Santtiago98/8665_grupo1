@@ -36,7 +36,7 @@ A continuación se muestra la secuencia de funciones que invoca el programa __sw
 Los puertos utilizados son los siguientes
 
 | Puerto  | Descripción |
-| ------------  |: -------------: |
+| ------------- |: -------------: |
 | LEDB  | Puerto 84 de la EDU-CIAA  |
 | LED3  | Puerto 106 de la EDU-CIAA | 
 
