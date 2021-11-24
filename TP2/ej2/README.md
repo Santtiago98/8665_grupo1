@@ -15,7 +15,7 @@ Para modificar el comportamiento del programa simplemente bastará con definir u
 
 Ejemplo:
 
-En la siguiente captura se observa cómo mediante una macro se controla qué biblioteca será incluida y luego de la misma manera se podrá determinar que funciones utilizar en casa caso. Además, el compilar de C permite definir macros al momento de compilar haciendo uso del parámetro '-D'.
+En la siguiente captura se observa cómo mediante una macro se controla qué biblioteca será incluida y luego de la misma manera se podrá determinar que funciones utilizar en casa caso. Además, el compilar de C permite definir macros al momento de compilar haciendo uso del parámetro '-D'. \
 ![image](https://user-images.githubusercontent.com/39803285/143321426-02697fad-69f7-4578-9ccf-47640f36f64b.png)
 
 
