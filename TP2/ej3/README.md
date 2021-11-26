@@ -21,4 +21,7 @@ b) Funciones utilizadas de la biblioteca __sAPI__
 
 | Función | Descripción |  Ubicación |
 | ------- | :--------: | :--------|
-| tickConfig() | Inicializa el tiempo deseado para una interrupción tick | sapi_ticks.h |
+| tickConfig( ) | Inicializa el tiempo deseado para una interrupción tick | sapi_ticks.h |
+| tickCallbackSet ( ) | Se utiliza para colgarse de un tick | sapi_ticks.h |
+| delay ( ) | Produce un delay de tiempo, especificado en ms | sapi_delay.h |
+| gpioWrite ( ) | Escribe en un puerto de la gpio de la EDU-CIAA | sapi_gpio.h | 
