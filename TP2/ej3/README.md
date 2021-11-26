@@ -15,6 +15,7 @@ Ejemplo:
 
 En la siguiente captura se observa cómo mediante una macro se controla qué biblioteca será incluida y luego de la misma manera se podrá determinar que funciones utilizar en casa caso. Además, el compilar de C permite definir macros al momento de compilar haciendo uso del parámetro '-D'. \
 
+![image](https://user-images.githubusercontent.com/39803285/143509421-52a3a244-1bcb-4d26-ad68-8b4eecaaa2d7.png)
 
 
 b) Funciones utilizadas de la biblioteca __sAPI__
