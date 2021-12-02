@@ -7,9 +7,11 @@ a)
 
 Para realizar una compilación condicional simplemente es necesario utilizar directivas al preprocesador.
 
-#ifdef \
-... \
+```{c}
+#ifdef
+  ...
 #endif
+```
 
 Para modificar el comportamiento del programa simplemente bastará con definir una macro que por medio de verificaciones condicionales podrá modificar cómo será compilado el programa.
 
