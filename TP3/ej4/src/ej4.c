@@ -47,7 +47,7 @@
 /*==================[internal data declaration]==============================*/
 
 typedef struct {
-    uint8_t  dutyCycle1; // LED 1
+    uint8_t dutyCycle1; // LED 1
     uint8_t dutyCycle2; // LED 2
     uint8_t dutyCycle3; // LED 3
 } dutyCycle_t;
@@ -55,15 +55,15 @@ typedef struct {
 /*==================[internal functions declaration]=========================*/
 void onRx( void * dutyCycles )
 {
+   dutyCycle_t dutyCycles2 = (dutyCycle_t * dutyCycles)
 	uint8_t data_read;
    uartReadByte( UART_PC, &data_read );
    printf("Valor leido : ");
    uartWriteByte(UART_PC, data_read);
    printf("\r\n");
-   callback(data_read, dutyCycles);
    switch (data_read){
       case '1':
-         aux = (uint16_t) (dutyCycles->dutyCycle1);
+         aux = (uint16_t) (dutyCycles2->dutyCycle1);
          aux += 1;
          if( aux > 255 )
             aux = 0;
@@ -71,7 +71,7 @@ void onRx( void * dutyCycles )
          
       break;
       case '2':
-         aux = (uint16_t) (dutyCycles->dutyCycle1);
+         aux = (uint16_t) (dutyCycles2->dutyCycle1);
          aux -= 1;
          if( aux < 0 )
             aux = 255;
@@ -104,11 +104,11 @@ int main(void){
    debugPrintlnString( "DEBUG: UART_USB configurada." );
 
    /* 0 a 255 */ 
-   dutyCycle_t dutyCycles {
-      uint8_t  dutyCycle1 = 0; // LED 1
-      uint16_t dutyCycle2 = 0; // LED 2
-      uint16_t dutyCycle3 = 0; // LED 3
-   };
+   dutyCycle_t dutyCycles;
+
+   dutyCycles.dutyCycle1 = 0;
+   dutyCycles.dutyCycle2 = 0
+   dutyCycles.dutyCycle3 = 0
 
    // Seteo un callback al evento de recepcion y habilito su interrupcion
    uartCallbackSet(UART_PC, UART_RECEIVE, onRx, &dutyCycles);
