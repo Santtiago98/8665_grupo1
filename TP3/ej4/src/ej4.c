@@ -42,7 +42,7 @@
 /*==================[definiciones y macros]==================================*/
 #define UART_PC UART_USB
 #define baudrate 115200
-#define STEP 10
+#define STEP 50
 // #define LED_ON 1
 // #define LED_OFF 0
 /*==================[internal data declaration]==============================*/
@@ -57,29 +57,70 @@ typedef struct {
 void onRx( void * dutyCycles )
 {
    dutyCycle_t * dutyCycles2 = (dutyCycle_t *) dutyCycles;
-	uint8_t data_read;
+   uint8_t data_read;
    uartReadByte( UART_PC, &data_read );
-   printf("Valor leido : ");
-   uartWriteByte(UART_PC, data_read);
-   printf("\r\n");
-   uint16_t aux;
+   printf("Valor leido : %d \r\n", data_read);
+   //uartWriteByte(UART_PC, data_read);
+   //printf("\r\n");
+   int16_t aux;
    switch (data_read){
       case '1':
-         aux = (uint16_t) (dutyCycles2->dutyCycle1);
+         aux = (int16_t) (dutyCycles2->dutyCycle1);
          aux += STEP;
          if( aux > 255 ){
             aux = 0;
          }
-         pwmWrite( PWM7, aux );
+         pwmWrite( PWM7, (uint8_t)aux );
+         dutyCycles2->dutyCycle1 = (uint8_t)aux;
 
       break;
       case '2':
-         aux = (uint16_t) (dutyCycles2->dutyCycle1);
+         aux = (int16_t) (dutyCycles2->dutyCycle1);
          aux -= STEP;
          if( aux < 0 ){
             aux = 255;
          }
-         pwmWrite( PWM7, aux );
+         pwmWrite( PWM7, (uint8_t)aux );
+         dutyCycles2->dutyCycle1 = (uint8_t)aux;
+      break;
+
+      case '3':
+         aux = (int16_t) (dutyCycles2->dutyCycle2);
+         aux += STEP;
+         if( aux < 0 ){
+            aux = 255;
+         }
+         pwmWrite( PWM8, (uint8_t)aux );
+         dutyCycles2->dutyCycle2 = (uint8_t)aux;
+      break;
+
+      case '4':
+         aux = (int16_t) (dutyCycles2->dutyCycle2);
+         aux -= STEP;
+         if( aux < 0 ){
+            aux = 255;
+         }
+         pwmWrite( PWM8, (uint8_t)aux );
+         dutyCycles2->dutyCycle2 = (uint8_t)aux;
+      break;
+      case '5':
+         aux = (int16_t) (dutyCycles2->dutyCycle2);
+         aux += STEP;
+         if( aux < 0 ){
+            aux = 255;
+         }
+         pwmWrite( PWM8, (uint8_t)aux );
+         dutyCycles2->dutyCycle2 = (uint8_t)aux;
+      break;
+
+      case '6':
+         aux = (int16_t) (dutyCycles2->dutyCycle2);
+         aux -= STEP;
+         if( aux < 0 ){
+            aux = 255;
+         }
+         pwmWrite( PWM8, (uint8_t)aux );
+         dutyCycles2->dutyCycle2 = (uint8_t)aux;
       break;
    }
 
@@ -107,7 +148,7 @@ int main(void){
    debugPrintConfigUart( UART_PC, baudrate );
    debugPrintlnString( "DEBUG: UART_USB configurada." );
 
-   /* 0 a 255 */
+   /* inicializo dutyCycles */
    dutyCycle_t dutyCycles;
 
    dutyCycles.dutyCycle1 = 0;
@@ -118,9 +159,6 @@ int main(void){
    uartCallbackSet(UART_PC, UART_RECEIVE, onRx, &dutyCycles);
    // Habilito todas las interrupciones de UART_USB
    uartInterrupt(UART_PC, 1);
-
-
-   // uint8_t pwmVal = 0; /* 0 a 255 */
 
    /* Configurar PWM */
    pwmConfig( 0, PWM_ENABLE );
@@ -136,26 +174,6 @@ int main(void){
 
    /* ------------- PROGRAMA PRINCIPAL ------------- */
    while(1) {
-      // valor = !gpioRead( TEC1 );
-      // gpioWrite( LEDB, valor );
-
-      // if( delayRead(&delayBase1) )
-      //    dutyCycle1++;
-      // if( dutyCycle1>255 )
-      //    dutyCycle1 = 0;
-      // pwmWrite( PWM7, dutyCycle1 );
-
-      // if( delayRead(&delayBase2) )
-      //     dutyCycle2 += 25;
-      // if( dutyCycle2>255 )
-      //    dutyCycle2 = 0;
-      // pwmWrite( PWM8, (uint8_t)dutyCycle2 );
-
-      // if( delayRead(&delayBase3) )
-      //     dutyCycle3 += 50;
-      // if( dutyCycle3>255 )
-      //    dutyCycle3 = 0;
-      // pwmWrite( PWM9, (uint8_t)dutyCycle3 );
 
    }
 
