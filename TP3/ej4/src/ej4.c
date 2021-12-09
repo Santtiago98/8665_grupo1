@@ -60,8 +60,6 @@ void onRx( void * dutyCycles )
    uint8_t data_read;
    uartReadByte( UART_PC, &data_read );
    printf("Valor leido : %d \r\n", data_read);
-   //uartWriteByte(UART_PC, data_read);
-   //printf("\r\n");
    int16_t aux;
    switch (data_read){
       case '1':
@@ -72,8 +70,8 @@ void onRx( void * dutyCycles )
          }
          pwmWrite( PWM7, (uint8_t)aux );
          dutyCycles2->dutyCycle1 = (uint8_t)aux;
+         break;
 
-      break;
       case '2':
          aux = (int16_t) (dutyCycles2->dutyCycle1);
          aux -= STEP;
@@ -82,7 +80,7 @@ void onRx( void * dutyCycles )
          }
          pwmWrite( PWM7, (uint8_t)aux );
          dutyCycles2->dutyCycle1 = (uint8_t)aux;
-      break;
+         break;
 
       case '3':
          aux = (int16_t) (dutyCycles2->dutyCycle2);
@@ -92,7 +90,7 @@ void onRx( void * dutyCycles )
          }
          pwmWrite( PWM8, (uint8_t)aux );
          dutyCycles2->dutyCycle2 = (uint8_t)aux;
-      break;
+         break;
 
       case '4':
          aux = (int16_t) (dutyCycles2->dutyCycle2);
@@ -100,28 +98,31 @@ void onRx( void * dutyCycles )
          if( aux < 0 ){
             aux = 255;
          }
-         pwmWrite( PWM8, (uint8_t)aux );
+         pwmWrite( PWM9, (uint8_t)aux );
          dutyCycles2->dutyCycle2 = (uint8_t)aux;
-      break;
+         break;
+         
       case '5':
-         aux = (int16_t) (dutyCycles2->dutyCycle2);
+         aux = (int16_t) (dutyCycles2->dutyCycle3);
          aux += STEP;
          if( aux < 0 ){
             aux = 255;
          }
-         pwmWrite( PWM8, (uint8_t)aux );
-         dutyCycles2->dutyCycle2 = (uint8_t)aux;
-      break;
+         pwmWrite( PWM9, (uint8_t)aux );
+         dutyCycles2->dutyCycle3 = (uint8_t)aux;
+         break;
 
       case '6':
-         aux = (int16_t) (dutyCycles2->dutyCycle2);
+         aux = (int16_t) (dutyCycles2->dutyCycle3);
          aux -= STEP;
          if( aux < 0 ){
             aux = 255;
          }
          pwmWrite( PWM8, (uint8_t)aux );
-         dutyCycles2->dutyCycle2 = (uint8_t)aux;
-      break;
+         dutyCycles2->dutyCycle3 = (uint8_t)aux;
+         break;
+      default:
+    	  break;
    }
 
     //data_read = '\n';
