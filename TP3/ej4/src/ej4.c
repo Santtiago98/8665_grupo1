@@ -42,7 +42,7 @@
 /*==================[definiciones y macros]==================================*/
 #define UART_PC UART_USB
 #define baudrate 115200
-#define STEP 10
+#define STEP 50
 // #define LED_ON 1
 // #define LED_OFF 0
 /*==================[internal data declaration]==============================*/
@@ -57,29 +57,31 @@ typedef struct {
 void onRx( void * dutyCycles )
 {
    dutyCycle_t * dutyCycles2 = (dutyCycle_t *) dutyCycles;
-	uint8_t data_read;
+   uint8_t data_read;
    uartReadByte( UART_PC, &data_read );
-   printf("Valor leido : ");
-   uartWriteByte(UART_PC, data_read);
-   printf("\r\n");
-   uint16_t aux;
+   printf("Valor leido : %d \r\n", data_read);
+   //uartWriteByte(UART_PC, data_read);
+   //printf("\r\n");
+   int16_t aux;
    switch (data_read){
       case '1':
-         aux = (uint16_t) (dutyCycles2->dutyCycle1);
+         aux = (int16_t) (dutyCycles2->dutyCycle1);
          aux += STEP;
          if( aux > 255 ){
             aux = 0;
          }
-         pwmWrite( PWM7, aux );
+         pwmWrite( PWM7, (uint8_t)aux );
+         dutyCycles2->dutyCycle1 = (uint8_t)aux;
 
       break;
       case '2':
-         aux = (uint16_t) (dutyCycles2->dutyCycle1);
+         aux = (int16_t) (dutyCycles2->dutyCycle1);
          aux -= STEP;
          if( aux < 0 ){
             aux = 255;
          }
-         pwmWrite( PWM7, aux );
+         pwmWrite( PWM7, (uint8_t)aux );
+         dutyCycles2->dutyCycle1 = (uint8_t)aux;
       break;
    }
 
