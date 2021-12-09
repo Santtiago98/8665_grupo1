@@ -122,7 +122,7 @@ int main(void)
 
    }
 
-   /* no debe llegar ac· */
+   /* no debe llegar ac√° */
    return 1;
 
 }
