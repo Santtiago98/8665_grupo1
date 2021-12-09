@@ -42,6 +42,7 @@
 /*==================[definiciones y macros]==================================*/
 #define UART_PC UART_USB
 #define baudrate 115200
+#define STEP 10
 // #define LED_ON 1
 // #define LED_OFF 0
 /*==================[internal data declaration]==============================*/
@@ -55,26 +56,29 @@ typedef struct {
 /*==================[internal functions declaration]=========================*/
 void onRx( void * dutyCycles )
 {
-   dutyCycle_t dutyCycles2 = (dutyCycle_t * dutyCycles)
+   dutyCycle_t * dutyCycles2 = (dutyCycle_t *) dutyCycles;
 	uint8_t data_read;
    uartReadByte( UART_PC, &data_read );
    printf("Valor leido : ");
    uartWriteByte(UART_PC, data_read);
    printf("\r\n");
+   uint16_t aux;
    switch (data_read){
       case '1':
          aux = (uint16_t) (dutyCycles2->dutyCycle1);
-         aux += 1;
-         if( aux > 255 )
+         aux += STEP;
+         if( aux > 255 ){
             aux = 0;
+         }
          pwmWrite( PWM7, aux );
-         
+
       break;
       case '2':
          aux = (uint16_t) (dutyCycles2->dutyCycle1);
-         aux -= 1;
-         if( aux < 0 )
+         aux -= STEP;
+         if( aux < 0 ){
             aux = 255;
+         }
          pwmWrite( PWM7, aux );
       break;
    }
@@ -103,12 +107,12 @@ int main(void){
    debugPrintConfigUart( UART_PC, baudrate );
    debugPrintlnString( "DEBUG: UART_USB configurada." );
 
-   /* 0 a 255 */ 
+   /* 0 a 255 */
    dutyCycle_t dutyCycles;
 
    dutyCycles.dutyCycle1 = 0;
-   dutyCycles.dutyCycle2 = 0
-   dutyCycles.dutyCycle3 = 0
+   dutyCycles.dutyCycle2 = 0;
+   dutyCycles.dutyCycle3 = 0;
 
    // Seteo un callback al evento de recepcion y habilito su interrupcion
    uartCallbackSet(UART_PC, UART_RECEIVE, onRx, &dutyCycles);
@@ -117,19 +121,18 @@ int main(void){
 
 
    // uint8_t pwmVal = 0; /* 0 a 255 */
-   
-   /* Configurar PWM */
-   valor = pwmConfig( 0, PWM_ENABLE );
 
-   valor = pwmConfig( PWM7, PWM_ENABLE_OUTPUT );
-   valor = pwmConfig( PWM8, PWM_ENABLE_OUTPUT );
-   valor = pwmConfig( PWM9, PWM_ENABLE_OUTPUT );
+   /* Configurar PWM */
+   pwmConfig( 0, PWM_ENABLE );
+   pwmConfig( PWM7, PWM_ENABLE_OUTPUT );
+   pwmConfig( PWM8, PWM_ENABLE_OUTPUT );
+   pwmConfig( PWM9, PWM_ENABLE_OUTPUT );
 
    /* Usar PWM */
-   valor = pwmWrite( PWM7, dutyCycle1 );
-   valor = pwmWrite( PWM8, dutyCycle2 );
-   valor = pwmWrite( PWM9, dutyCycle3 );
-   
+   pwmWrite( PWM7, dutyCycles.dutyCycle1 );
+   pwmWrite( PWM8, dutyCycles.dutyCycle2 );
+   pwmWrite( PWM9, dutyCycles.dutyCycle3 );
+
 
    /* ------------- PROGRAMA PRINCIPAL ------------- */
    while(1) {
