@@ -1,10 +1,3 @@
-/*
- * TP3_eej7.c
- *
- *  Created on: 9 dic. 2021
- *      Author: ipipe
- */
-
 
 /*==================[inclusions]=============================================*/
 #include "sapi.h"         // <= sAPI header
