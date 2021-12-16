@@ -9,7 +9,7 @@
 #define LED_ON 1
 #define LED_OFF 0
 
-TECLA (PC) -> TERMINAL (PC) -> UART (USB).RX -> LED
+//TECLA (PC) -> TERMINAL (PC) -> UART (USB).RX -> LED
 
 /*==================[definiciones de datos internos]=========================*/
 
@@ -44,17 +44,15 @@ void keyboardLed(uint8_t data_read){
 		}
 }
 
-void onRx( void *none )
-{
+void onRx( void *none ){
 	uint8_t data_read;
     uartReadByte( UART_PC, &data_read );
     keyboardLed(data_read);
-    //data_read = '\n';
 
 	uartWriteByte(UART_3, data_read);
 }
 
-onRx_UART3(void *none){
+void onRx_UART3( void *none ){
 	uint8_t data_read;
 	uartReadByte( UART_3, &data_read );
 	keyboardLed(data_read);
@@ -75,20 +73,21 @@ int main( void )
    debugPrintlnString( "DEBUG: UART_USB configurada." );
 
    uint8_t data_read='\n';
+	// Seteo un callback al evento de recepcion y habilito su interrupcion
+	uartCallbackSet(UART_PC, UART_RECEIVE, onRx, NULL);
+	// Habilito todas las interrupciones de UART_USB
+	uartInterrupt(UART_PC, 1);
+
+	// Seteo un callback al evento de recepcion y habilito su interrupcion
+	uartCallbackSet(UART_3, UART_RECEIVE, onRx_UART3, NULL);
+	// Habilito todas las interrupciones de UART_USB
+	uartInterrupt(UART_3, 1);
    // ---------- REPETIR POR SIEMPRE --------------------------
    while( TRUE ) {
 		printf("Ingrese un caracter. \r\n");
 		uartReadByte(UART_PC, &data_read);
 
-	    // Seteo un callback al evento de recepcion y habilito su interrupcion
-	    uartCallbackSet(UART_PC, UART_RECEIVE, onRx, NULL);
-	    // Habilito todas las interrupciones de UART_USB
-	    uartInterrupt(UART_PC, 1);
 
-		// Seteo un callback al evento de recepcion y habilito su interrupcion
-	    uartCallbackSet(UART_3, UART_RECEIVE, onRx_UART3, NULL);
-	    // Habilito todas las interrupciones de UART_USB
-	    uartInterrupt(UART_3, 1);
 		delay(1000);
    }
 
