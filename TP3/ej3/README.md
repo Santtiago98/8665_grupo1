@@ -59,7 +59,7 @@ void keyboardLed(uint8_t data_read)
 ``` 
 
 
-Para lograr que el programa funcione con y sin interrupciones se realiza una compilación condicional tal como se vió en el TP2.
+Para lograr que el programa funcione **con y sin interrupciones** se realiza una compilación condicional tal como se vió en el TP2.
 
 ![image](https://user-images.githubusercontent.com/39803285/146284573-a8f86b2c-406e-498e-b59f-04cb9b1d9187.png)
 
