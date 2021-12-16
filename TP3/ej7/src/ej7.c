@@ -59,8 +59,8 @@ int main(void)
    debugPrintString( "TP3 - Ejercicio 2:\r\n" );
 
    uartConfig( UART_232, 115200 );
-   //uartCallbackSet(UART_232,UART_RECEIVE,onRx,NULL);
-   //uartInterrupt(UART_232, 1);
+   uartCallbackSet(UART_232,UART_RECEIVE,onRx,NULL);
+   uartInterrupt(UART_232, 1);
 
 
 
