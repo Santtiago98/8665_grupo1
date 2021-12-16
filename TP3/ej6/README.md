@@ -31,4 +31,18 @@ void onRx(void *nothing){
 }
 ```
 De esta forma se implementa una interfaz teclado-DAC que permite seleccionar el valor de salida del DAC por medio de teclas numéricas.
-A su vez se lee el ADC inmediatamente luego de escribir el DAC para observar su variación de tensión. 
+A su vez se lee el ADC inmediatamente luego de escribir el DAC para observar su variación de tensión. Para ello se decidió inicializarlo haciendo uso de las funciones brindadas por lpc
+
+```{c}
+int ADCInit(){
+	//Board_ADC_Init();
+	/*Inicializar el ADC en el canal correcto*/
+	Chip_ADC_Init(_LPC_ADC_ID, &ADCSetup);
+	ADCSetup.burstMode = false;
+	Chip_ADC_EnableChannel(_LPC_ADC_ID, _ADC_CHANNEL, ENABLE);
+	Chip_ADC_SetResolution(_LPC_ADC_ID, &ADCSetup, ADC_10BITS);
+	Chip_ADC_SetSampleRate(_LPC_ADC_ID, &ADCSetup, 100000);
+
+	return 0;
+}
+```
