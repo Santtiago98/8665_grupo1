@@ -1,7 +1,9 @@
 Ejercicio 3
 
-
+## Enunciado
 ![image](https://user-images.githubusercontent.com/39803285/146280680-2041ea32-1318-443b-888e-3a34bfb115ec.png)
+
+## Solución
 
 Primeramente debe establecerse la conexión con por medio de la _UART_PC_, para ello se utiliza la siguiente sentencia que configura la _UART_PC_ como opción de debug.
 
@@ -17,6 +19,12 @@ uint8_t data_read;
 uartWriteByte(UART_PC, data_read);
 ```
 Finalmente, para poder prender/apagar cada uno de los leds se establecen las siguientes relaciones
+
+| LED | Prender | Apagar |
+|:---:|:--------:|:---------:|
+| ROJO  |    A   |    a   |
+|  VERDE|    B   |    b   |
+|  AZUL |    C   |    c   |
 
 ```{c}
 A --> LED rojo ON
