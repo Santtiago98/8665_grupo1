@@ -64,12 +64,13 @@ Para lograr que el programa funcione con y sin interrupciones se realiza una com
 ![image](https://user-images.githubusercontent.com/39803285/146284573-a8f86b2c-406e-498e-b59f-04cb9b1d9187.png)
 
 De esta forma definiendo la macro EJ3_INTERRUPCION se setea el callback para configurar la interrupción por _UART_PC_. 
-Y la función que se ejecutará en caso de que salte la interrupción será.
+Y la función que se ejecutará en caso de que salte la interrupción será
 ```{c}
 void onRx( void *noUsado )
 {
 	uint8_t data_read;
     uartReadByte( UART_PC, &data_read );
     keyboardLed(data_read);
-}-
+}
 ``` 
+Si no se desea trabajar con interrupciones simplemente se evita hacer la definición de dicha macro y el programa funcionará igualmente.
