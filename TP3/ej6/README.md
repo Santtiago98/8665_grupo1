@@ -30,3 +30,5 @@ void onRx(void *nothing){
     printf("Valor medido: %d \r\n", data_adc);
 }
 ```
+De esta forma se implementa una interfaz teclado-DAC que permite seleccionar el valor de salida del DAC por medio de teclas numéricas.
+A su vez se lee el ADC inmediatamente luego de escribir el DAC para observar su variación de tensión. 
