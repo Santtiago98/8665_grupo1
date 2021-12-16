@@ -34,6 +34,10 @@ De esta forma se implementa una interfaz teclado-DAC que permite seleccionar el 
 A su vez se lee el ADC inmediatamente luego de escribir el DAC para observar su variación de tensión. Para ello se decidió inicializarlo haciendo uso de las funciones brindadas por lpc
 
 ```{c}
+#define _ADC_CHANNEL ADC_CH1   /* Canal 1 de la EDU-CIAA */
+#define _LPC_ADC_ID LPC_ADC0   /* ADC_CH1 de la EDU-CIAA */
+static ADC_CLOCK_SETUP_T ADCSetup;
+
 int ADCInit(){
 	//Board_ADC_Init();
 	/*Inicializar el ADC en el canal correcto*/
